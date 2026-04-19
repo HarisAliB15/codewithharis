@@ -1,0 +1,59 @@
+.pageHero {
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+.pageTitle { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+.pageSubtitle { font-size: 1rem; color: #6b7280; max-width: 520px; margin: 0 auto; }
+
+.projectsSection { padding: 4rem 0 6rem; }
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.projectCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+.projectCard:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); transform: translateY(-4px); }
+.projectThumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.projectInfo { padding: 1.4rem; }
+.projectTag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3b82f6;
+  background: rgba(59,130,246,0.08);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.projectName { font-size: 1rem; font-weight: 700; color: #0a0a0a; margin-bottom: 0.5rem; }
+.projectDesc { font-size: 0.84rem; color: #6b7280; line-height: 1.65; }
+
+/* CTA */
+.ctaSection { padding: 5.5rem 0; background: #0a0a0a; text-align: center; position: relative; overflow: hidden; }
+.ctaGlow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 400px; background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%); pointer-events: none; }
+.ctaInner { position: relative; z-index: 1; }
+.ctaBadge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; }
+.ctaTitle { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.ctaSubtitle { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .projectsGrid { grid-template-columns: 1fr; }
+}

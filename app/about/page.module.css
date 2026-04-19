@@ -1,0 +1,72 @@
+.pageHero {
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+.pageTitle { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+.pageSubtitle { font-size: 1rem; color: #6b7280; max-width: 520px; margin: 0 auto; }
+
+.aboutSection { padding: 5rem 0; }
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.aboutContent h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; line-height: 1.2; }
+.aboutContent p { font-size: 0.92rem; color: #6b7280; line-height: 1.8; margin-bottom: 1rem; }
+.aboutVisual {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+  border-radius: 1.25rem;
+  aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Blocks */
+.aboutBlock { margin-bottom: 5rem; }
+.blockTitle { font-size: clamp(1.6rem, 3.5vw, 2rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.35rem; }
+.blockSubtitle { font-size: 0.92rem; color: #6b7280; margin-bottom: 1.5rem; }
+
+/* Values */
+.valuesGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.valueCard { background: #fafafa; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; transition: all 0.25s ease; }
+.valueCard:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.valueEmoji { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+.valueTitle { font-size: 0.95rem; font-weight: 700; color: #0a0a0a; margin-bottom: 0.4rem; }
+.valueDesc { font-size: 0.82rem; color: #6b7280; line-height: 1.65; }
+
+/* Tech */
+.techList { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.techTag { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.85rem; border: 1.5px solid #e5e7eb; border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: #0a0a0a; background: #fff; transition: all 0.2s ease; }
+.techTag:hover { border-color: #3b82f6; color: #3b82f6; }
+
+/* Team */
+.teamGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+.teamCard { text-align: center; padding: 1.75rem 1.25rem; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 0.75rem; transition: all 0.25s ease; }
+.teamCard:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.teamAvatar { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #0a0a0a, #374151); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1rem; color: #fff; font-weight: 700; transition: transform 0.3s ease; }
+.teamAvatar:hover { transform: scale(1.15) rotate(3deg); }
+.teamName { font-size: 0.95rem; font-weight: 700; color: #0a0a0a; margin-bottom: 0.25rem; }
+.teamRole { font-size: 0.8rem; color: #3b82f6; font-weight: 600; }
+
+/* CTA */
+.ctaSection { padding: 5.5rem 0; background: #0a0a0a; text-align: center; position: relative; overflow: hidden; }
+.ctaGlow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 400px; background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%); pointer-events: none; }
+.ctaInner { position: relative; z-index: 1; }
+.ctaBadge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; }
+.ctaTitle { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.ctaSubtitle { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+@media (max-width: 768px) {
+  .aboutGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .valuesGrid { grid-template-columns: 1fr 1fr; }
+  .teamGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .valuesGrid, .teamGrid { grid-template-columns: 1fr; }
+}
