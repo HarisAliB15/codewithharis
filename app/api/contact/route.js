@@ -7,9 +7,10 @@ export async function POST(request) {
     const body = await request.json();
     const { firstName, lastName, email, phone, service, budget, message } = body;
 
-    const data = await resend.emails.send({
-      from: 'Contact Form <contact@harisdev.online>',
-      to: [process.env.RESEND_TO_EMAIL || 'hello@harisdev.online'],
+    const { data, error } = await resend.emails.send({
+      from: 'Contact Form <onboarding@resend.dev>', // Note: Use this testing email if 'harisdev.online' is not verified in Resend yet
+      to: ['harisaliasghar43@gmail.com'], 
+      reply_to: email, // Added so you can directly reply to the user!
       subject: `New Contact Request from ${firstName} ${lastName}`,
       html: `
         <h2>New Contact Form Submission | CodeWithHaris</h2>
@@ -23,9 +24,9 @@ export async function POST(request) {
       `
     });
 
-    if (data.error) {
-      console.error('RESEND API ERROR:', data.error);
-      return Response.json({ error: data.error }, { status: 400 });
+    if (error) {
+      console.error('RESEND API ERROR:', error);
+      return Response.json({ error }, { status: 400 });
     }
 
     return Response.json(data);
