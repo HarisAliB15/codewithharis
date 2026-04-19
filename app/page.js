@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Build something great! - Code With Haris',
+  title: 'Create something powerful! - Code With Haris',
   description: 'Code With Haris — where we turn your ideas into reality. From crafting stunning designs to building robust software and deploying seamlessly.',
 };
 
@@ -19,10 +19,11 @@ export default function HomePage() {
             Available for new projects
           </div>
           <h1 className={styles.heroTitle}>
-            ✨ Design, 🚀 Build &amp; 🚚 Deploy
+            🎨 Design, 💻 Build &amp; 🌐 Deploy
           </h1>
           <p className={styles.heroSubtitle}>
-            Welcome to Code With Haris! 🌟 where we turn your ideas into reality. From crafting stunning designs ✨ to building robust software 🚀 and deploying it seamlessly 🚚, we&apos;re here to help your business shine. Let&apos;s create something amazing together! 🎉
+            Welcome to Code With Haris! 🌟 <br />
+            We bring your ideas to life with powerful digital solutions. From crafting modern designs 🎨📱 to building scalable software 💻🚀 and deploying it smoothly 🌐📡, we&apos;re here to help your business grow 📈🤝. Let&apos;s create something incredible together 🎯🧩💡
           </p>
           <div className={styles.heroButtons}>
             <Link href="/contact" className="btn btn-primary">
@@ -33,22 +34,7 @@ export default function HomePage() {
               Discover Our Services
             </Link>
           </div>
-          <div className={styles.heroStats}>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>50+</span>
-              <span className={styles.statLabel}>Projects Delivered</span>
-            </div>
-            <div className={styles.statDivider} />
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>30+</span>
-              <span className={styles.statLabel}>Happy Clients</span>
-            </div>
-            <div className={styles.statDivider} />
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>5+</span>
-              <span className={styles.statLabel}>Years Experience</span>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -62,19 +48,16 @@ export default function HomePage() {
           </div>
           <div className={styles.servicesGrid}>
             {[
-              { icon: '🌐', title: 'Website Development', desc: 'Our skilled developers create responsive and beautiful websites designed to fit your business needs. Whether it\'s a simple landing page or a full corporate site, we make sure it works smoothly on all devices using the latest tools.' },
-              { icon: '📱', title: 'Mobile App Development', desc: 'Connect with your customers anytime with our mobile app development services. We create user-friendly, feature-packed iOS and Android apps to engage your audience and enhance your brand\'s mobile presence.' },
-              { icon: '🎨', title: 'UI/UX Design', desc: 'Great design starts with the user. Our UI/UX experts focus on creating designs that are both beautiful and easy to use, striking the perfect balance between style and functionality to drive results.' },
-              { icon: '⚡', title: 'Web Application Development', desc: 'Streamline your business with custom web applications. We use modern frameworks and agile methods to create secure, efficient, and dynamic solutions that enhance productivity and simplify workflows.' },
+              { icon: '🌐', title: 'Website Development', desc: 'Our professional developers build SEO-friendly, responsive websites tailored to your business goals. From high-converting landing pages to full-scale corporate platforms, we ensure fast performance, clean code, and seamless compatibility across all devices.' },
+              { icon: '📱', title: 'Mobile App Development', desc: 'Grow your business with custom mobile app development for iOS and Android. We create fast, user-focused applications with modern features, smooth performance, and scalable architecture to boost engagement and strengthen your digital presence.' },
+              { icon: '🎨', title: 'UI/UX Design', desc: 'Deliver better user experiences with expert UI/UX design services. We craft intuitive interfaces, modern layouts, and visually engaging designs that improve usability, increase conversions, and enhance overall customer satisfaction.' },
+              { icon: '⚡', title: 'Web Application Development', desc: 'Transform your workflow with custom web application development solutions. Using modern frameworks and secure technologies, we build scalable, high-performance applications that automate processes, improve efficiency, and support business growth.' },
             ].map((service) => (
               <div key={service.title} className={styles.serviceCard}>
                 <div className={styles.cardGlow} />
                 <span className={styles.serviceIcon}>{service.icon}</span>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDesc}>{service.desc}</p>
-                <Link href="#services" className={styles.serviceLink}>
-                  Learn more <span>→</span>
-                </Link>
               </div>
             ))}
           </div>

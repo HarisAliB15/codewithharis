@@ -7,7 +7,7 @@ export async function POST(request) {
     const { email } = await request.json();
 
     const data = await resend.emails.send({
-      from: 'Newsletter <onboarding@resend.dev>',
+      from: 'Newsletter <contact@harisdev.online>',
       to: [process.env.RESEND_TO_EMAIL || 'hello@harisdev.online'],
       subject: `New Newsletter Subscription`,
       html: `

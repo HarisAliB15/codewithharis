@@ -51,7 +51,7 @@ export default function ContactPage() {
               <p>Whether you need a website, mobile app, or full-stack solution, our team is ready to bring your vision to life.</p>
 
               {[
-                { icon: '📧', text: 'hello@harisdev.online' },
+                { icon: '📧', text: 'haris.asghar.developer@gmail.com' },
                 { icon: '🌍', text: 'Remote Worldwide' },
                 { icon: '⏱️', text: 'Response within 24 hours' },
                 { icon: '💼', text: 'Available for new projects' },

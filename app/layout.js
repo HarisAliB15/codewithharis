@@ -1,13 +1,13 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Build something great! - Code With Haris',
-  description: 'Build something great!',
+  title: 'Create something powerful! - Code With Haris',
+  description: 'Create something powerful!',
   keywords: 'CodeWithHaris,Code With Haris,Haris Ali,App Development,Web Development,Next.js,React,React Native,Expo,TypeScript',
   authors: [{ name: 'Haris Ali' }],
   openGraph: {
     title: 'Code With Haris',
-    description: 'Build something great!',
+    description: 'Create something powerful!',
     url: 'https://harisdev.online',
     siteName: 'Code With Haris',
     type: 'website',

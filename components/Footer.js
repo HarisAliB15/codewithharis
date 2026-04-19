@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
             <div className={styles.brandText}>
               <span className={styles.brandName}>Code With Haris</span>
-              <span className={styles.brandTagline}>Build something great!</span>
+              <span className={styles.brandTagline}>Create something powerful!</span>
             </div>
           </Link>
           <p className={styles.footerBrandDesc}>
