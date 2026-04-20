@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
             <div className={styles.brandText}>
               <span className={styles.brandName}>Code With Haris</span>
-              <span className={styles.brandTagline}>Create something powerful!</span>
+              <span className={styles.brandTagline}>Fast, modern web & mobile apps</span>
             </div>
           </Link>
           <p className={styles.footerBrandDesc}>
@@ -78,7 +78,6 @@ export default function Footer() {
             <li><a href="https://www.instagram.com/harisali526/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="https://github.com/HarisAliB15" target="_blank" rel="noopener noreferrer">Github</a></li>
             <li><a href="https://www.linkedin.com/in/haris-ali-asghar-software-engineer/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://wa.me/923116571110" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
           </ul>
         </div>
 

@@ -10,6 +10,9 @@ export const metadata = {
   authors: [{ name: 'Haris Ali' }],
   creator: 'Haris Ali',
   metadataBase: new URL('https://www.harisdev.online'),
+  alternates: {
+    canonical: 'https://www.harisdev.online',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Create something powerful! - Code With Haris',
-  description: 'Code With Haris — where we turn your ideas into reality. From crafting stunning designs to building robust software and deploying seamlessly.',
+  title: 'I build fast, modern web apps - Code With Haris',
+  description: 'Freelance full-stack developer in Pakistan specializing in Next.js, React, React Native mobile apps, and Node.js.',
 };
 
 export default function HomePage() {
@@ -19,11 +19,11 @@ export default function HomePage() {
             Available for new projects
           </div>
           <h1 className={styles.heroTitle}>
-            🎨 Design, 💻 Build &amp; 🌐 Deploy
+            I Build Fast, Modern Web Apps 🚀
           </h1>
           <p className={styles.heroSubtitle}>
-            Welcome to Code With Haris! 🌟 <br />
-            We bring your ideas to life with powerful digital solutions. From crafting modern designs 🎨📱 to building scalable software 💻🚀 and deploying it smoothly 🌐📡, we&apos;re here to help your business grow 📈🤝. Let&apos;s create something incredible together 🎯🧩💡
+            Freelance Full-Stack Developer based in Pakistan. 🇵🇰 <br />
+            Specializing in Next.js ⚛️, React 🌐, and Node.js 🟢, I bring your ideas to life 💡 with powerful digital solutions ⚡. Whether it&apos;s a high-performance web platform 🖥️ or a React Native mobile app 📱, I build scalable software 🏗️ to help your business grow 📈. Let&apos;s craft something incredible together! 💻✨
           </p>
           <div className={styles.heroButtons}>
             <Link href="/contact" className="btn btn-primary">
@@ -49,7 +49,7 @@ export default function HomePage() {
           <div className={styles.servicesGrid}>
             {[
               { icon: '🌐', title: 'Website Development', desc: 'Our professional developers build SEO-friendly, responsive websites tailored to your business goals. From high-converting landing pages to full-scale corporate platforms, we ensure fast performance, clean code, and seamless compatibility across all devices.' },
-              { icon: '📱', title: 'Mobile App Development', desc: 'Grow your business with custom mobile app development for iOS and Android. We create fast, user-focused applications with modern features, smooth performance, and scalable architecture to boost engagement and strengthen your digital presence.' },
+              { icon: '📱', title: 'Mobile App Development', desc: 'Grow your business with custom mobile app development using React Native for iOS and Android. We create fast, user-focused applications with modern features, smooth performance, and scalable architecture to boost engagement.' },
               { icon: '🎨', title: 'UI/UX Design', desc: 'Deliver better user experiences with expert UI/UX design services. We craft intuitive interfaces, modern layouts, and visually engaging designs that improve usability, increase conversions, and enhance overall customer satisfaction.' },
               { icon: '⚡', title: 'Web Application Development', desc: 'Transform your workflow with custom web application development solutions. Using modern frameworks and secure technologies, we build scalable, high-performance applications that automate processes, improve efficiency, and support business growth.' },
             ].map((service) => (
