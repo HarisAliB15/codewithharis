@@ -22,8 +22,8 @@ export default function HomePage() {
             I Build Fast, Modern Web Apps 🚀
           </h1>
           <p className={styles.heroSubtitle}>
-            Freelance Full-Stack Developer based in Pakistan. 🇵🇰 <br />
-            Specializing in Next.js ⚛️, React 🌐, and Node.js 🟢, I bring your ideas to life 💡 with powerful digital solutions ⚡. Whether it&apos;s a high-performance web platform 🖥️ or a React Native mobile app 📱, I build scalable software 🏗️ to help your business grow 📈. Let&apos;s craft something incredible together! 💻✨
+            Freelance full-stack web and mobile app developer from Pakistan. 🇵🇰 <br />
+            Building fast, modern apps with React 🌐, Next.js ⚛️ and React Native 📱 for clients worldwide 🌍. Whether you need custom web development 🖥️ or mobile app development 🚀, I bring your ideas to life with powerful digital solutions ⚡. Let&apos;s build something incredible together! 💻✨
           </p>
           <div className={styles.heroButtons}>
             <Link href="/contact" className="btn btn-primary">
