@@ -62,8 +62,84 @@
 .formSelect { cursor: pointer; }
 .submitBtn { width: 100%; justify-content: center; }
 
-.phoneInputGroup { display: flex; gap: 0.5rem; }
-.countryCodeSelect { width: 120px; flex-shrink: 0; }
+.phoneInputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+.phoneInputWrapper:focus-within {
+  border-color: #0a0a0a;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+.customSelectContainer {
+  position: relative;
+  flex-shrink: 0;
+  border-right: 1.5px solid #e5e7eb;
+  background: #fafafa;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.customSelectTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  color: #0a0a0a;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.customSelectDropdown {
+  position: absolute;
+  top: 100%;
+  left: -1.5px;
+  margin-top: 0.25rem;
+  width: 250px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  flex-direction: column;
+}
+.customSelectOption {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #0a0a0a;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: nowrap;
+}
+.customSelectOption:last-child {
+  border-bottom: none;
+}
+.customSelectOption:hover {
+  background: #f9fafb;
+}
+.phoneInputBody {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  outline: none;
+  color: #0a0a0a;
+}
+.phoneInputBody::placeholder {
+  color: #9ca3af;
+}
 .phoneError { color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: block; font-weight: 500; }
 @media (max-width: 768px) {
   .contactGrid { grid-template-columns: 1fr; gap: 2.5rem; }

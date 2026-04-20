@@ -1,22 +1,29 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Create something powerful! - Code With Haris',
-  description: 'Create something powerful!',
-  keywords: 'CodeWithHaris,Code With Haris,Haris Ali,App Development,Web Development,Next.js,React,React Native,Expo,TypeScript',
+  title: {
+    default: 'Haris Ali | Full-Stack Developer',
+    template: '%s | CodeWithHaris',
+  },
+  description: 'I build fast, modern web apps using Next.js, React and Node.js. Based in Pakistan.',
+  keywords: ['Next.js developer', 'React developer', 'Full-stack developer Pakistan', 'CodeWithHaris'],
   authors: [{ name: 'Haris Ali' }],
+  creator: 'Haris Ali',
+  metadataBase: new URL('https://www.harisdev.online'),
   openGraph: {
-    title: 'Code With Haris',
-    description: 'Create something powerful!',
-    url: 'https://harisdev.online',
-    siteName: 'Code With Haris',
     type: 'website',
+    locale: 'en_US',
+    url: 'https://www.harisdev.online',
+    siteName: 'CodeWithHaris',
+    title: 'Haris Ali | Full-Stack Developer',
+    description: 'I build fast, modern web apps using Next.js, React and Node.js.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'CodeWithHaris' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Code With Haris',
-    description: 'Master React Native by building professional projects from Code With Haris.',
-    creator: '@codewithharis_',
+    title: 'Haris Ali | Full-Stack Developer',
+    description: 'I build fast, modern web apps using Next.js, React and Node.js.',
+    images: ['/og-image.png'],
   },
 };
 

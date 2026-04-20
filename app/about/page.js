@@ -1,8 +1,8 @@
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'About - Code With Haris',
-  description: 'Learn about Code With Haris — a team of passionate developers and designers building exceptional digital products.',
+  title: 'About',
+  description: 'Learn more about Haris Ali, a full-stack developer from Pakistan specializing in Next.js and React.',
 };
 
 export default function AboutPage() {

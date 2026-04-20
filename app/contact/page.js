@@ -1,12 +1,39 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import ReactCountryFlag from 'react-country-flag';
 import styles from './page.module.css';
+
+const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+
+const countryList = [
+  { iso: 'PK', code: '+92', flag: '🇵🇰' },
+  { iso: 'US', code: '+1', flag: '🇺🇸' },
+  { iso: 'GB', code: '+44', flag: '🇬🇧' },
+  { iso: 'AE', code: '+971', flag: '🇦🇪' },
+  { iso: 'SA', code: '+966', flag: '🇸🇦' },
+  { iso: 'IN', code: '+91', flag: '🇮🇳' },
+  { iso: 'CA', code: '+1', flag: '🇨🇦' },
+  { iso: 'AU', code: '+61', flag: '🇦🇺' },
+  { iso: 'RU', code: '+7', flag: '🇷🇺' }, { iso: 'KZ', code: '+7', flag: '🇰🇿' }, { iso: 'EG', code: '+20', flag: '🇪🇬' }, { iso: 'ZA', code: '+27', flag: '🇿🇦' }, { iso: 'GR', code: '+30', flag: '🇬🇷' }, { iso: 'NL', code: '+31', flag: '🇳🇱' }, { iso: 'BE', code: '+32', flag: '🇧🇪' }, { iso: 'FR', code: '+33', flag: '🇫🇷' }, { iso: 'ES', code: '+34', flag: '🇪🇸' }, { iso: 'HU', code: '+36', flag: '🇭🇺' }, { iso: 'IT', code: '+39', flag: '🇮🇹' }, { iso: 'RO', code: '+40', flag: '🇷🇴' }, { iso: 'CH', code: '+41', flag: '🇨🇭' }, { iso: 'AT', code: '+43', flag: '🇦🇹' }, { iso: 'DK', code: '+45', flag: '🇩🇰' }, { iso: 'SE', code: '+46', flag: '🇸🇪' }, { iso: 'NO', code: '+47', flag: '🇳🇴' }, { iso: 'PL', code: '+48', flag: '🇵🇱' }, { iso: 'DE', code: '+49', flag: '🇩🇪' }, { iso: 'PE', code: '+51', flag: '🇵🇪' }, { iso: 'MX', code: '+52', flag: '🇲🇽' }, { iso: 'CU', code: '+53', flag: '🇨🇺' }, { iso: 'AR', code: '+54', flag: '🇦🇷' }, { iso: 'BR', code: '+55', flag: '🇧🇷' }, { iso: 'CL', code: '+56', flag: '🇨🇱' }, { iso: 'CO', code: '+57', flag: '🇨🇴' }, { iso: 'VE', code: '+58', flag: '🇻🇪' }, { iso: 'MY', code: '+60', flag: '🇲🇾' }, { iso: 'ID', code: '+62', flag: '🇮🇩' }, { iso: 'PH', code: '+63', flag: '🇵🇭' }, { iso: 'NZ', code: '+64', flag: '🇳🇿' }, { iso: 'SG', code: '+65', flag: '🇸🇬' }, { iso: 'TH', code: '+66', flag: '🇹🇭' }, { iso: 'JP', code: '+81', flag: '🇯🇵' }, { iso: 'KR', code: '+82', flag: '🇰🇷' }, { iso: 'VN', code: '+84', flag: '🇻🇳' }, { iso: 'CN', code: '+86', flag: '🇨🇳' }, { iso: 'TR', code: '+90', flag: '🇹🇷' }, { iso: 'AF', code: '+93', flag: '🇦🇫' }, { iso: 'LK', code: '+94', flag: '🇱🇰' }, { iso: 'MM', code: '+95', flag: '🇲🇲' }, { iso: 'IR', code: '+98', flag: '🇮🇷' }, { iso: 'MA', code: '+212', flag: '🇲🇦' }, { iso: 'DZ', code: '+213', flag: '🇩🇿' }, { iso: 'TN', code: '+216', flag: '🇹🇳' }, { iso: 'LY', code: '+218', flag: '🇱🇾' }, { iso: 'GM', code: '+220', flag: '🇬🇲' }, { iso: 'SN', code: '+221', flag: '🇸🇳' }, { iso: 'MR', code: '+222', flag: '🇲🇷' }, { iso: 'ML', code: '+223', flag: '🇲🇱' }, { iso: 'GN', code: '+224', flag: '🇬🇳' }, { iso: 'CI', code: '+225', flag: '🇨🇮' }, { iso: 'BF', code: '+226', flag: '🇧🇫' }, { iso: 'NE', code: '+227', flag: '🇳🇪' }, { iso: 'TG', code: '+228', flag: '🇹🇬' }, { iso: 'BJ', code: '+229', flag: '🇧🇯' }, { iso: 'MU', code: '+230', flag: '🇲🇺' }, { iso: 'LR', code: '+231', flag: '🇱🇷' }, { iso: 'SL', code: '+232', flag: '🇸🇱' }, { iso: 'GH', code: '+233', flag: '🇬🇭' }, { iso: 'NG', code: '+234', flag: '🇳🇬' }, { iso: 'TD', code: '+235', flag: '🇹🇩' }, { iso: 'CF', code: '+236', flag: '🇨🇫' }, { iso: 'CM', code: '+237', flag: '🇨🇲' }, { iso: 'CV', code: '+238', flag: '🇨🇻' }, { iso: 'ST', code: '+239', flag: '🇸🇹' }, { iso: 'GQ', code: '+240', flag: '🇬🇶' }, { iso: 'GA', code: '+241', flag: '🇬🇦' }, { iso: 'CG', code: '+242', flag: '🇨🇬' }, { iso: 'CD', code: '+243', flag: '🇨🇩' }, { iso: 'AO', code: '+244', flag: '🇦🇴' }, { iso: 'GW', code: '+245', flag: '🇬🇼' }, { iso: 'SC', code: '+248', flag: '🇸🇨' }, { iso: 'SD', code: '+249', flag: '🇸🇩' }, { iso: 'RW', code: '+250', flag: '🇷🇼' }, { iso: 'ET', code: '+251', flag: '🇪🇹' }, { iso: 'SO', code: '+252', flag: '🇸🇴' }, { iso: 'DJ', code: '+253', flag: '🇩🇯' }, { iso: 'KE', code: '+254', flag: '🇰🇪' }, { iso: 'TZ', code: '+255', flag: '🇹🇿' }, { iso: 'UG', code: '+256', flag: '🇺🇬' }, { iso: 'BI', code: '+257', flag: '🇧🇮' }, { iso: 'MZ', code: '+258', flag: '🇲🇿' }, { iso: 'ZM', code: '+260', flag: '🇿🇲' }, { iso: 'MG', code: '+261', flag: '🇲🇬' }, { iso: 'ZW', code: '+263', flag: '🇿🇼' }, { iso: 'NA', code: '+264', flag: '🇳🇦' }, { iso: 'MW', code: '+265', flag: '🇲🇼' }, { iso: 'LS', code: '+266', flag: '🇱🇸' }, { iso: 'BW', code: '+267', flag: '🇧🇼' }, { iso: 'SZ', code: '+268', flag: '🇸🇿' }, { iso: 'KM', code: '+269', flag: '🇰🇲' }, { iso: 'ER', code: '+291', flag: '🇪🇷' }, { iso: 'PT', code: '+351', flag: '🇵🇹' }, { iso: 'LU', code: '+352', flag: '🇱🇺' }, { iso: 'IE', code: '+353', flag: '🇮🇪' }, { iso: 'IS', code: '+354', flag: '🇮🇸' }, { iso: 'AL', code: '+355', flag: '🇦🇱' }, { iso: 'MT', code: '+356', flag: '🇲🇹' }, { iso: 'CY', code: '+357', flag: '🇨🇾' }, { iso: 'FI', code: '+358', flag: '🇫🇮' }, { iso: 'BG', code: '+359', flag: '🇧🇬' }, { iso: 'LT', code: '+370', flag: '🇱🇹' }, { iso: 'LV', code: '+371', flag: '🇱🇻' }, { iso: 'EE', code: '+372', flag: '🇪🇪' }, { iso: 'MD', code: '+373', flag: '🇲🇩' }, { iso: 'AM', code: '+374', flag: '🇦🇲' }, { iso: 'BY', code: '+375', flag: '🇧🇾' }, { iso: 'AD', code: '+376', flag: '🇦🇩' }, { iso: 'MC', code: '+377', flag: '🇲🇨' }, { iso: 'SM', code: '+378', flag: '🇸🇲' }, { iso: 'UA', code: '+380', flag: '🇺🇦' }, { iso: 'RS', code: '+381', flag: '🇷🇸' }, { iso: 'ME', code: '+382', flag: '🇲🇪' }, { iso: 'HR', code: '+385', flag: '🇭🇷' }, { iso: 'SI', code: '+386', flag: '🇸🇮' }, { iso: 'BA', code: '+387', flag: '🇧🇦' }, { iso: 'MK', code: '+389', flag: '🇲🇰' }, { iso: 'CZ', code: '+420', flag: '🇨🇿' }, { iso: 'SK', code: '+421', flag: '🇸🇰' }, { iso: 'LI', code: '+423', flag: '🇱🇮' }, { iso: 'BZ', code: '+501', flag: '🇧🇿' }, { iso: 'GT', code: '+502', flag: '🇬🇹' }, { iso: 'SV', code: '+503', flag: '🇸🇻' }, { iso: 'HN', code: '+504', flag: '🇭🇳' }, { iso: 'NI', code: '+505', flag: '🇳🇮' }, { iso: 'CR', code: '+506', flag: '🇨🇷' }, { iso: 'PA', code: '+507', flag: '🇵🇦' }, { iso: 'HT', code: '+509', flag: '🇭🇹' }, { iso: 'BO', code: '+591', flag: '🇧🇴' }, { iso: 'GY', code: '+592', flag: '🇬🇾' }, { iso: 'EC', code: '+593', flag: '🇪🇨' }, { iso: 'PY', code: '+595', flag: '🇵🇾' }, { iso: 'SR', code: '+597', flag: '🇸🇷' }, { iso: 'UY', code: '+598', flag: '🇺🇾' }, { iso: 'BN', code: '+673', flag: '🇧🇳' }, { iso: 'NR', code: '+674', flag: '🇳🇷' }, { iso: 'PG', code: '+675', flag: '🇵🇬' }, { iso: 'TO', code: '+676', flag: '🇹🇴' }, { iso: 'SB', code: '+677', flag: '🇸🇧' }, { iso: 'VU', code: '+678', flag: '🇻🇺' }, { iso: 'FJ', code: '+679', flag: '🇫🇯' }, { iso: 'PW', code: '+680', flag: '🇵🇼' }, { iso: 'WS', code: '+685', flag: '🇼🇸' }, { iso: 'KI', code: '+686', flag: '🇰🇮' }, { iso: 'TV', code: '+688', flag: '🇹🇻' }, { iso: 'FM', code: '+691', flag: '🇫🇲' }, { iso: 'MH', code: '+692', flag: '🇲🇭' }, { iso: 'KP', code: '+850', flag: '🇰🇵' }, { iso: 'KH', code: '+855', flag: '🇰🇭' }, { iso: 'LA', code: '+856', flag: '🇱🇦' }, { iso: 'BD', code: '+880', flag: '🇧🇩' }, { iso: 'TW', code: '+886', flag: '🇹🇼' }, { iso: 'MV', code: '+960', flag: '🇲🇻' }, { iso: 'LB', code: '+961', flag: '🇱🇧' }, { iso: 'JO', code: '+962', flag: '🇯🇴' }, { iso: 'SY', code: '+963', flag: '🇸🇾' }, { iso: 'IQ', code: '+964', flag: '🇮🇶' }, { iso: 'KW', code: '+965', flag: '🇰🇼' }, { iso: 'YE', code: '+967', flag: '🇾🇪' }, { iso: 'OM', code: '+968', flag: '🇴🇲' }, { iso: 'PS', code: '+970', flag: '🇵🇸' }, { iso: 'IL', code: '+972', flag: '🇮🇱' }, { iso: 'BH', code: '+973', flag: '🇧🇭' }, { iso: 'QA', code: '+974', flag: '🇶🇦' }, { iso: 'BT', code: '+975', flag: '🇧🇹' }, { iso: 'MN', code: '+976', flag: '🇲🇳' }, { iso: 'NP', code: '+977', flag: '🇳🇵' }, { iso: 'TJ', code: '+992', flag: '🇹🇯' }, { iso: 'TM', code: '+993', flag: '🇹🇲' }, { iso: 'AZ', code: '+994', flag: '🇦🇿' }, { iso: 'GE', code: '+995', flag: '🇬🇪' }, { iso: 'KG', code: '+996', flag: '🇰🇬' }, { iso: 'UZ', code: '+998', flag: '🇺🇿' }
+];
 
 export default function ContactPage() {
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', service: '', budget: '', message: '' });
   const [sent, setSent] = useState(false);
-  const [countryCode, setCountryCode] = useState('+1');
+  const [selectedCountry, setSelectedCountry] = useState(countryList[0]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [phoneTouched, setPhoneTouched] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -25,7 +52,7 @@ export default function ContactPage() {
       return;
     }
     try {
-      const payloadForm = { ...form, phone: `${countryCode} ${form.phone}` };
+      const payloadForm = { ...form, phone: `${selectedCountry.code} ${form.phone}` };
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -116,32 +143,49 @@ export default function ContactPage() {
                 </div>
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel} htmlFor="phone">Phone Number *</label>
-                  <div className={styles.phoneInputGroup}>
-                    <select
-                      className={`${styles.formSelect} ${styles.countryCodeSelect}`}
-                      value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                    >
-                      <option value="+1">🇺🇸 +1</option>
-                      <option value="+44">🇬🇧 +44</option>
-                      <option value="+91">🇮🇳 +91</option>
-                      <option value="+92">🇵🇰 +92</option>
-                      <option value="+61">🇦🇺 +61</option>
-                      <option value="+81">🇯🇵 +81</option>
-                      <option value="+49">🇩🇪 +49</option>
-                      <option value="+33">🇫🇷 +33</option>
-                      <option value="+86">🇨🇳 +86</option>
-                      <option value="+971">🇦🇪 +971</option>
-                      <option value="+966">🇸🇦 +966</option>
-                    </select>
-                    <input 
-                      id="phone" 
-                      name="phone" 
-                      type="tel" 
-                      className={styles.formInput} 
-                      placeholder="5550000000" 
-                      value={form.phone} 
-                      onChange={handlePhoneChange} 
+                  <div className={styles.phoneInputWrapper}>
+                    <div className={styles.customSelectContainer} ref={dropdownRef}>
+                      <button
+                        type="button"
+                        className={styles.customSelectTrigger}
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                      >
+                        <ReactCountryFlag countryCode={selectedCountry.iso} svg style={{ width: '1.4em', height: '1.4em', borderRadius: '2px' }} />
+                        <span>{selectedCountry.code}</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '1px', transform: dropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}><path d="m6 9 6 6 6-6" /></svg>
+                      </button>
+
+                      {dropdownOpen && dropdownRef.current && (
+                        <div className={styles.customSelectDropdown}>
+                          {countryList.map((c, i) => {
+                            let displayName = '';
+                            try { displayName = regionNames.of(c.iso); } catch (e) { displayName = c.iso; }
+                            return (
+                              <div
+                                key={i}
+                                className={styles.customSelectOption}
+                                onClick={() => {
+                                  setSelectedCountry(c);
+                                  setDropdownOpen(false);
+                                }}
+                              >
+                                <ReactCountryFlag countryCode={c.iso} svg style={{ width: '1.5em', height: '1.5em', flexShrink: 0, borderRadius: '2px' }} />
+                                <span style={{ fontWeight: 500 }}>{displayName}</span>
+                                <span style={{ color: '#6b7280', marginLeft: 'auto' }}>{c.code}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      className={styles.phoneInputBody}
+                      placeholder="5550000000"
+                      value={form.phone}
+                      onChange={handlePhoneChange}
                       onBlur={() => setPhoneTouched(true)}
                     />
                   </div>
@@ -178,8 +222,9 @@ export default function ContactPage() {
                   <label className={styles.formLabel} htmlFor="message">Message</label>
                   <textarea id="message" name="message" className={styles.formTextarea} placeholder="Tell us about your project..." value={form.message} onChange={handleChange} required />
                 </div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
+                  disabled={!isPhoneValid}
                   className={`btn btn-primary ${styles.submitBtn}`}
                   style={{ opacity: !isPhoneValid ? 0.7 : 1, cursor: !isPhoneValid ? 'not-allowed' : 'pointer' }}
                   onClick={() => setPhoneTouched(true)}

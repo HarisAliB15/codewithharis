@@ -3,8 +3,8 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Projects - Code With Haris',
-  description: 'Explore our portfolio of websites, mobile apps, and web applications built by Code With Haris.',
+  title: 'Projects',
+  description: 'Explore web development projects built by Haris Ali using Next.js, React and modern technologies.',
 };
 
 const projects = [
