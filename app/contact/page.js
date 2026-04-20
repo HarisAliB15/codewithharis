@@ -5,21 +5,37 @@ import styles from './page.module.css';
 export default function ContactPage() {
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', service: '', budget: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [countryCode, setCountryCode] = useState('+1');
+  const [phoneTouched, setPhoneTouched] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '');
+    setForm({ ...form, phone: value });
+    if (value.length > 0) setPhoneTouched(true);
+  };
+
+  const isPhoneValid = /^\d{7,15}$/.test(form.phone);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isPhoneValid) {
+      setPhoneTouched(true);
+      return;
+    }
     try {
+      const payloadForm = { ...form, phone: `${countryCode} ${form.phone}` };
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify(payloadForm)
       });
 
       if (response.ok) {
         setSent(true);
         setForm({ firstName: '', lastName: '', email: '', phone: '', service: '', budget: '', message: '' });
+        setPhoneTouched(false);
         setTimeout(() => setSent(false), 3500);
       } else {
         const errorData = await response.json();
@@ -99,8 +115,39 @@ export default function ContactPage() {
                   <input id="email" name="email" type="email" className={styles.formInput} placeholder="john@example.com" value={form.email} onChange={handleChange} required />
                 </div>
                 <div className={styles.formGroup}>
-                  <label className={styles.formLabel} htmlFor="phone">Phone Number</label>
-                  <input id="phone" name="phone" type="tel" className={styles.formInput} placeholder="+1 (555) 000-0000" value={form.phone} onChange={handleChange} />
+                  <label className={styles.formLabel} htmlFor="phone">Phone Number *</label>
+                  <div className={styles.phoneInputGroup}>
+                    <select
+                      className={`${styles.formSelect} ${styles.countryCodeSelect}`}
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                    >
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+92">🇵🇰 +92</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+81">🇯🇵 +81</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+86">🇨🇳 +86</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+966">🇸🇦 +966</option>
+                    </select>
+                    <input 
+                      id="phone" 
+                      name="phone" 
+                      type="tel" 
+                      className={styles.formInput} 
+                      placeholder="5550000000" 
+                      value={form.phone} 
+                      onChange={handlePhoneChange} 
+                      onBlur={() => setPhoneTouched(true)}
+                    />
+                  </div>
+                  {(!isPhoneValid && phoneTouched) && (
+                    <span className={styles.phoneError}>Please enter a valid phone number</span>
+                  )}
                 </div>
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel} htmlFor="service">Service Needed</label>
@@ -131,7 +178,12 @@ export default function ContactPage() {
                   <label className={styles.formLabel} htmlFor="message">Message</label>
                   <textarea id="message" name="message" className={styles.formTextarea} placeholder="Tell us about your project..." value={form.message} onChange={handleChange} required />
                 </div>
-                <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
+                <button 
+                  type="submit" 
+                  className={`btn btn-primary ${styles.submitBtn}`}
+                  style={{ opacity: !isPhoneValid ? 0.7 : 1, cursor: !isPhoneValid ? 'not-allowed' : 'pointer' }}
+                  onClick={() => setPhoneTouched(true)}
+                >
                   Send Message
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2 11 13" /><path d="m22 2-7 20-4-9-9-4 20-7z" /></svg>
                 </button>
