@@ -18,14 +18,14 @@ export const metadata = {
   ],
   authors: [{ name: 'Haris Ali' }],
   creator: 'Haris Ali',
-  metadataBase: new URL('https://www.harisdev.online'),
+  metadataBase: new URL('https://harisdev.online'),
   alternates: {
-    canonical: 'https://www.harisdev.online',
+    canonical: 'https://harisdev.online',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.harisdev.online',
+    url: 'https://harisdev.online',
     siteName: 'CodeWithHaris',
     title: 'Haris Ali | Full-Stack & Mobile App Developer',
     description: 'Building fast modern web and mobile apps with React, Next.js and React Native.',
