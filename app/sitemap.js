@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://www.harisdev.online'; // ← add www here
+  const baseUrl = 'https://harisdev.online';
   const lastModified = new Date();
 
   return [

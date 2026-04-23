@@ -1,0 +1,568 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\eslint.config.mjs",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_eslint_config_mjs",
+      "community": 17,
+      "norm_label": "eslint.config.mjs"
+    },
+    {
+      "label": "next.config.mjs",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\next.config.mjs",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_next_config_mjs",
+      "community": 18,
+      "norm_label": "next.config.mjs"
+    },
+    {
+      "label": "replace.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\replace.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_replace_js",
+      "community": 1,
+      "norm_label": "replace.js"
+    },
+    {
+      "label": "processDirectory()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\replace.js",
+      "source_location": "L15",
+      "id": "replace_processdirectory",
+      "community": 1,
+      "norm_label": "processdirectory()"
+    },
+    {
+      "label": "layout.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\layout.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_layout_js",
+      "community": 2,
+      "norm_label": "layout.js"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\layout.js",
+      "source_location": "L45",
+      "id": "layout_rootlayout",
+      "community": 2,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\page.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_page_js",
+      "community": 3,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "HomePage()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\page.js",
+      "source_location": "L9",
+      "id": "page_homepage",
+      "community": 3,
+      "norm_label": "homepage()"
+    },
+    {
+      "label": "robots.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\robots.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_robots_js",
+      "community": 4,
+      "norm_label": "robots.js"
+    },
+    {
+      "label": "robots()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\robots.js",
+      "source_location": "L1",
+      "id": "robots_robots",
+      "community": 4,
+      "norm_label": "robots()"
+    },
+    {
+      "label": "sitemap.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\sitemap.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_sitemap_js",
+      "community": 5,
+      "norm_label": "sitemap.js"
+    },
+    {
+      "label": "sitemap()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\sitemap.js",
+      "source_location": "L1",
+      "id": "sitemap_sitemap",
+      "community": 5,
+      "norm_label": "sitemap()"
+    },
+    {
+      "label": "layout.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\about\\layout.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_about_layout_js",
+      "community": 6,
+      "norm_label": "layout.js"
+    },
+    {
+      "label": "AboutLayout()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\about\\layout.js",
+      "source_location": "L9",
+      "id": "layout_aboutlayout",
+      "community": 6,
+      "norm_label": "aboutlayout()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\about\\page.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_about_page_js",
+      "community": 7,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "AboutPage()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\about\\page.js",
+      "source_location": "L8",
+      "id": "page_aboutpage",
+      "community": 7,
+      "norm_label": "aboutpage()"
+    },
+    {
+      "label": "route.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\api\\contact\\route.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_api_contact_route_js",
+      "community": 0,
+      "norm_label": "route.js"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\api\\newsletter\\route.js",
+      "source_location": "L5",
+      "id": "route_post",
+      "community": 0,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route (2).js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\api\\newsletter\\route (2).js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_api_newsletter_route_2_js",
+      "community": 19,
+      "norm_label": "route (2).js"
+    },
+    {
+      "label": "route.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\api\\newsletter\\route.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_api_newsletter_route_js",
+      "community": 0,
+      "norm_label": "route.js"
+    },
+    {
+      "label": "layout.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\layout.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_blog_layout_js",
+      "community": 8,
+      "norm_label": "layout.js"
+    },
+    {
+      "label": "BlogLayout()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\layout.js",
+      "source_location": "L9",
+      "id": "layout_bloglayout",
+      "community": 8,
+      "norm_label": "bloglayout()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\page.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_blog_page_js",
+      "community": 9,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "BlogPage()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\page.js",
+      "source_location": "L22",
+      "id": "page_blogpage",
+      "community": 9,
+      "norm_label": "blogpage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\ai-bubble-openai-oracle\\page.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_blog_ai_bubble_openai_oracle_page_js",
+      "community": 10,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "BlogPost()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\ai-bubble-openai-oracle\\page.js",
+      "source_location": "L8",
+      "id": "page_blogpost",
+      "community": 10,
+      "norm_label": "blogpost()"
+    },
+    {
+      "label": "layout.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\contact\\layout.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_contact_layout_js",
+      "community": 11,
+      "norm_label": "layout.js"
+    },
+    {
+      "label": "ContactLayout()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\contact\\layout.js",
+      "source_location": "L9",
+      "id": "layout_contactlayout",
+      "community": 11,
+      "norm_label": "contactlayout()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\contact\\page.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_contact_page_js",
+      "community": 12,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "ContactPage()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\contact\\page.js",
+      "source_location": "L20",
+      "id": "page_contactpage",
+      "community": 12,
+      "norm_label": "contactpage()"
+    },
+    {
+      "label": "layout.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\projects\\layout.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_projects_layout_js",
+      "community": 13,
+      "norm_label": "layout.js"
+    },
+    {
+      "label": "ProjectsLayout()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\projects\\layout.js",
+      "source_location": "L9",
+      "id": "layout_projectslayout",
+      "community": 13,
+      "norm_label": "projectslayout()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\projects\\page.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_app_projects_page_js",
+      "community": 14,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "ProjectsPage()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\projects\\page.js",
+      "source_location": "L17",
+      "id": "page_projectspage",
+      "community": 14,
+      "norm_label": "projectspage()"
+    },
+    {
+      "label": "Footer.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\components\\Footer.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_components_footer_js",
+      "community": 15,
+      "norm_label": "footer.js"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\components\\Footer.js",
+      "source_location": "L7",
+      "id": "footer_footer",
+      "community": 15,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "Navbar.js",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\components\\Navbar.js",
+      "source_location": "L1",
+      "id": "d_projects_codewithharis_components_navbar_js",
+      "community": 16,
+      "norm_label": "navbar.js"
+    },
+    {
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "D:\\Projects\\codewithHARIS\\components\\Navbar.js",
+      "source_location": "L7",
+      "id": "navbar_navbar",
+      "community": 16,
+      "norm_label": "navbar()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\replace.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_replace_js",
+      "_tgt": "replace_processdirectory",
+      "source": "d_projects_codewithharis_replace_js",
+      "target": "replace_processdirectory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\layout.js",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_layout_js",
+      "_tgt": "layout_rootlayout",
+      "source": "d_projects_codewithharis_app_layout_js",
+      "target": "layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\page.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_page_js",
+      "_tgt": "page_homepage",
+      "source": "d_projects_codewithharis_app_page_js",
+      "target": "page_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\robots.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_robots_js",
+      "_tgt": "robots_robots",
+      "source": "d_projects_codewithharis_app_robots_js",
+      "target": "robots_robots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\sitemap.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_sitemap_js",
+      "_tgt": "sitemap_sitemap",
+      "source": "d_projects_codewithharis_app_sitemap_js",
+      "target": "sitemap_sitemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\about\\layout.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_about_layout_js",
+      "_tgt": "layout_aboutlayout",
+      "source": "d_projects_codewithharis_app_about_layout_js",
+      "target": "layout_aboutlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\about\\page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_about_page_js",
+      "_tgt": "page_aboutpage",
+      "source": "d_projects_codewithharis_app_about_page_js",
+      "target": "page_aboutpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\api\\contact\\route.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_api_contact_route_js",
+      "_tgt": "route_post",
+      "source": "d_projects_codewithharis_app_api_contact_route_js",
+      "target": "route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\api\\newsletter\\route.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_api_newsletter_route_js",
+      "_tgt": "route_post",
+      "source": "route_post",
+      "target": "d_projects_codewithharis_app_api_newsletter_route_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\layout.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_blog_layout_js",
+      "_tgt": "layout_bloglayout",
+      "source": "d_projects_codewithharis_app_blog_layout_js",
+      "target": "layout_bloglayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\page.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_blog_page_js",
+      "_tgt": "page_blogpage",
+      "source": "d_projects_codewithharis_app_blog_page_js",
+      "target": "page_blogpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\blog\\ai-bubble-openai-oracle\\page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_blog_ai_bubble_openai_oracle_page_js",
+      "_tgt": "page_blogpost",
+      "source": "d_projects_codewithharis_app_blog_ai_bubble_openai_oracle_page_js",
+      "target": "page_blogpost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\contact\\layout.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_contact_layout_js",
+      "_tgt": "layout_contactlayout",
+      "source": "d_projects_codewithharis_app_contact_layout_js",
+      "target": "layout_contactlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\contact\\page.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_contact_page_js",
+      "_tgt": "page_contactpage",
+      "source": "d_projects_codewithharis_app_contact_page_js",
+      "target": "page_contactpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\projects\\layout.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_projects_layout_js",
+      "_tgt": "layout_projectslayout",
+      "source": "d_projects_codewithharis_app_projects_layout_js",
+      "target": "layout_projectslayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\app\\projects\\page.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_app_projects_page_js",
+      "_tgt": "page_projectspage",
+      "source": "d_projects_codewithharis_app_projects_page_js",
+      "target": "page_projectspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\components\\Footer.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_components_footer_js",
+      "_tgt": "footer_footer",
+      "source": "d_projects_codewithharis_components_footer_js",
+      "target": "footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\Projects\\codewithHARIS\\components\\Navbar.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "d_projects_codewithharis_components_navbar_js",
+      "_tgt": "navbar_navbar",
+      "source": "d_projects_codewithharis_components_navbar_js",
+      "target": "navbar_navbar",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
