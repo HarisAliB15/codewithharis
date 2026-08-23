@@ -79,9 +79,11 @@ export default function ContactPage() {
     <>
       <section className={styles.pageHero}>
         <div className="container">
-          <p className="section-label">Get In Touch</p>
-          <h1 className={styles.pageTitle}>Contact Us</h1>
-          <p className={styles.pageSubtitle}>Have a project in mind? We&apos;d love to hear about it. Drop us a message and we&apos;ll get back to you within 24 hours.</p>
+          <p className="section-label">Get in touch</p>
+          <h1 className={styles.pageTitle}>Contact</h1>
+          <p className={styles.pageSubtitle}>
+            Have a project in mind? Share the details and I&apos;ll respond within 24 hours.
+          </p>
         </div>
       </section>
 
@@ -90,23 +92,26 @@ export default function ContactPage() {
           <div className={styles.contactGrid}>
             {/* Info */}
             <div className={styles.contactInfo}>
-              <h2>Let&apos;s build something great together</h2>
-              <p>Whether you need a website, mobile app, or full-stack solution, our team is ready to bring your vision to life.</p>
+              <h2>Let&apos;s build something great</h2>
+              <p>
+                Whether you need a website, mobile app, or full-stack solution,
+                I&apos;m ready to bring your vision to life with clarity and craft.
+              </p>
 
               {[
-                { icon: '📧', text: 'haris.asghar.developer@gmail.com' },
-                { icon: '🌍', text: 'Remote Worldwide' },
-                { icon: '⏱️', text: 'Response within 24 hours' },
-                { icon: '💼', text: 'Available for new projects' },
+                { label: 'Email', text: 'haris.asghar.developer@gmail.com' },
+                { label: 'Location', text: 'Remote · Worldwide' },
+                { label: 'Response', text: 'Within 24 hours' },
+                { label: 'Status', text: 'Available for new projects' },
               ].map((item) => (
-                <div key={item.text} className={styles.contactItem}>
-                  <div className={styles.contactIcon}>{item.icon}</div>
+                <div key={item.label} className={styles.contactItem}>
+                  <span className={styles.contactLabel}>{item.label}</span>
                   <span className={styles.contactItemText}>{item.text}</span>
                 </div>
               ))}
 
               <div className={styles.socialButtons}>
-                <p className={styles.socialLabel}>Follow us</p>
+                <p className={styles.socialLabel}>Follow me</p>
                 <div className={styles.socialGrid}>
                   {[
                     { label: 'Twitter', href: 'https://x.com/HarisAli60237' },
@@ -123,7 +128,7 @@ export default function ContactPage() {
             <div className={styles.contactFormCard}>
               {sent && (
                 <div className={styles.successBanner}>
-                  ✅ Message sent! We&apos;ll get back to you within 24 hours.
+                  Message sent. I&apos;ll get back to you within 24 hours.
                 </div>
               )}
               <form onSubmit={handleSubmit}>
@@ -220,7 +225,7 @@ export default function ContactPage() {
                 </div>
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel} htmlFor="message">Message</label>
-                  <textarea id="message" name="message" className={styles.formTextarea} placeholder="Tell us about your project..." value={form.message} onChange={handleChange} required />
+                  <textarea id="message" name="message" className={styles.formTextarea} placeholder="Tell me about your project..." value={form.message} onChange={handleChange} required />
                 </div>
                 <button
                   type="submit"

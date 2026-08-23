@@ -31,7 +31,7 @@ export default function HomePage() {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
             </Link>
             <Link href="#services" className="btn btn-outline">
-              Discover Our Services
+              View My Services
             </Link>
           </div>
 
@@ -41,17 +41,17 @@ export default function HomePage() {
       {/* ===================== SERVICES ===================== */}
       <section className={styles.services} id="services">
         <div className="container">
-          <p className="section-label">What we do</p>
+          <p className="section-label">What I do</p>
           <div className="section-header">
-            <h2 className="section-title">Our Expert Services</h2>
-            <p className="section-subtitle">Custom Solutions Tailored for Your Digital Success</p>
+            <h2 className="section-title">Services I Offer</h2>
+            <p className="section-subtitle">Custom solutions tailored to your goals — built start to finish by me.</p>
           </div>
           <div className={styles.servicesGrid}>
             {[
-              { icon: '🌐', title: 'Website Development', desc: 'Our professional developers build SEO-friendly, responsive websites tailored to your business goals. From high-converting landing pages to full-scale corporate platforms, we ensure fast performance, clean code, and seamless compatibility across all devices.' },
-              { icon: '📱', title: 'Mobile App Development', desc: 'Grow your business with custom mobile app development using React Native for iOS and Android. We create fast, user-focused applications with modern features, smooth performance, and scalable architecture to boost engagement.' },
-              { icon: '🎨', title: 'UI/UX Design', desc: 'Deliver better user experiences with expert UI/UX design services. We craft intuitive interfaces, modern layouts, and visually engaging designs that improve usability, increase conversions, and enhance overall customer satisfaction.' },
-              { icon: '⚡', title: 'Web Application Development', desc: 'Transform your workflow with custom web application development solutions. Using modern frameworks and secure technologies, we build scalable, high-performance applications that automate processes, improve efficiency, and support business growth.' },
+              { icon: '🌐', title: 'Website Development', desc: 'I build SEO-friendly, responsive websites tailored to your business goals — from high-converting landing pages to full-scale platforms, with fast performance, clean code, and seamless compatibility across devices.' },
+              { icon: '📱', title: 'Mobile App Development', desc: 'Grow your business with custom mobile apps using React Native for iOS and Android. I create fast, user-focused applications with modern features, smooth performance, and scalable architecture.' },
+              { icon: '🎨', title: 'UI/UX Design', desc: 'I craft intuitive interfaces and visually engaging layouts that improve usability, increase conversions, and deliver a polished experience your users will love.' },
+              { icon: '⚡', title: 'Web Application Development', desc: 'I build scalable, high-performance web applications with modern frameworks and secure technologies — automating workflows, improving efficiency, and supporting real business growth.' },
             ].map((service) => (
               <div key={service.title} className={styles.serviceCard}>
                 <div className={styles.cardGlow} />
@@ -69,9 +69,9 @@ export default function HomePage() {
         <div className={`container ${styles.ctaInner}`}>
           <p className={styles.ctaBadge}>🚀 Let&apos;s Work Together</p>
           <h2 className={styles.ctaTitle}>Ready to Elevate Your Digital Presence?</h2>
-          <p className={styles.ctaSubtitle}>Bring your vision to life with Code With Haris. Collaborate with our experts and create your next successful project today!</p>
+          <p className={styles.ctaSubtitle}>Bring your vision to life with Code With Haris. Work directly with me — one developer, end-to-end — and ship your next project with confidence.</p>
           <Link href="/contact" className="btn btn-white">
-            Let&apos;s Contact
+            Get in Touch
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </Link>
         </div>

@@ -40,11 +40,11 @@ export default function Footer() {
             </div>
             <div className={styles.brandText}>
               <span className={styles.brandName}>Code With Haris</span>
-              <span className={styles.brandTagline}>Fast, modern web & mobile apps</span>
+              <span className={styles.brandTagline}>Solo developer · Web & mobile</span>
             </div>
           </Link>
           <p className={styles.footerBrandDesc}>
-            We turn ideas into digital reality. From design to deployment, we&apos;re your trusted technology partner.
+            I turn ideas into digital reality. From design to deployment, you work directly with me — a solo full-stack developer.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
           <h4 className={styles.footerHeading}>Company</h4>
           <ul className={styles.footerLinks}>
             <li><Link href="/about">About</Link></li>
-            <li><Link href="/contact">Contact Us</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
             <li><Link href="/projects">Projects</Link></li>
             <li><Link href="/blog">Blog</Link></li>
           </ul>
@@ -83,8 +83,8 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div className={styles.footerNewsletterCol}>
-          <h4 className={styles.footerHeading}>Sign up for our newsletter</h4>
-          <p className={styles.newsletterDesc}>Subscribe to get the latest design news, articles, resources and inspiration.</p>
+          <h4 className={styles.footerHeading}>Newsletter</h4>
+          <p className={styles.newsletterDesc}>Subscribe for dev tips, project updates, and articles from my blog.</p>
           <form className={styles.newsletterForm} onSubmit={handleSubscribe}>
             <input
               type="email"

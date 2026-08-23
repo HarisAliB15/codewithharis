@@ -15,7 +15,7 @@ export default function BlogPost() {
         <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: '800', lineHeight: '1.2', marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
           The AI Bubble: Is OpenAI Manipulating Oracle and Other Tech Giants?
         </h1>
-        
+
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem', borderBottom: '1px solid #e5e7eb', paddingBottom: '2.5rem' }}>
           <div style={{ width: '50px', height: '50px', borderRadius: '50%', overflow: 'hidden', background: '#e5e7eb' }}>
             <Image src="/profile.png" alt="Author" width={50} height={50} style={{ objectFit: 'cover' }} />
@@ -27,21 +27,21 @@ export default function BlogPost() {
         </div>
 
         <div style={{ width: '100%', height: '400px', position: 'relative', borderRadius: '1rem', overflow: 'hidden', marginBottom: '3rem' }}>
-           <Image src="/blog-ai-bubble.jpg" alt="AI Bubble Image" fill sizes="(max-width: 800px) 100vw, 800px" style={{ objectFit: 'cover' }} priority />
+          <Image src="/blog-ai-bubble.jpg" alt="AI Bubble Image" fill sizes="(max-width: 800px) 100vw, 800px" style={{ objectFit: 'cover' }} priority />
         </div>
 
         <div className="blog-content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#374151' }}>
           <p>The artificial intelligence industry is experiencing one of the biggest investment booms in the history of technology. Billions of dollars are flowing into AI companies, valuations are skyrocketing, and tech giants are making desperate moves to stay relevant in the AI race.</p>
-          <br/>
+          <br />
           <p>But behind the excitement and the headlines, a darker story is emerging. Critics, economists, and even some insiders are asking a dangerous question — <strong>Is AI just another bubble? And is OpenAI at the center of a massive manipulation of the tech industry?</strong></p>
-          <br/>
+          <br />
           <p>In this blog, I want to break down what is really happening, who is benefiting, and whether the AI gold rush is built on solid foundations or on hype and fear.</p>
-          
+
           <hr style={{ margin: '3rem 0', borderColor: '#e5e7eb' }} />
 
           <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginTop: '2.5rem', marginBottom: '1rem', color: '#0a0a0a' }}>What is the AI Bubble?</h2>
           <p>A financial bubble occurs when the price or valuation of an asset rises far beyond its real value, driven by speculation, hype, and fear of missing out — until it eventually crashes.</p>
-          <br/>
+          <br />
           <p>We have seen this before:</p>
           <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', marginTop: '1rem' }}>
             <li style={{ marginBottom: '0.5rem' }}><strong>Dot-com bubble (2000)</strong> — Internet companies with no revenue were valued at billions. When it crashed, trillions were wiped out.</li>
@@ -102,7 +102,7 @@ export default function BlogPost() {
 
           <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginTop: '2.5rem', marginBottom: '1rem', color: '#0a0a0a' }}>Sam Altman — Visionary or Master Manipulator?</h2>
           <p>OpenAI&apos;s CEO <strong>Sam Altman</strong> is one of the most powerful and controversial figures in tech today. He is a brilliant communicator who has convinced governments, investors, and the public that AI is the most important technology in human history.</p>
-          <br/>
+          <br />
           <p>But critics point to several concerning patterns:</p>
           <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', marginTop: '1rem' }}>
             <li style={{ marginBottom: '0.5rem' }}><strong>Conflict of Interest</strong> — Altman has personal investments in dozens of AI and tech companies that benefit from OpenAI&apos;s success.</li>
@@ -138,23 +138,23 @@ export default function BlogPost() {
 
           <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginTop: '2.5rem', marginBottom: '1rem', color: '#0a0a0a' }}>Conclusion</h2>
           <p>The AI industry is at a critical crossroads. The technology is real, the potential is enormous, but the valuations, the deals, and the hype surrounding companies like OpenAI, Oracle, and others have gone far beyond what the current reality justifies.</p>
-          <br/>
+          <br />
           <p>Whether this is a full bubble or just an overcorrection, one thing is clear — the companies that will survive and thrive in the long run are those that focus on building genuinely useful products rather than chasing valuations and headlines.</p>
-          <br/>
+          <br />
           <p>As developers, our job is to cut through the hype, understand the technology deeply, and build things that actually solve real problems. That is what will matter when the dust settles.</p>
         </div>
       </div>
-      
+
       {/* CTA Section Reused */}
       <section className="ctaSection">
         <div className="ctaGlow" />
         <div className="container ctaInner">
           <p className="ctaBadge">🚀 Let&apos;s Work Together</p>
           <h2 className="ctaTitle">Ready to Elevate Your Digital Presence?</h2>
-          <p className="ctaSubtitle">Bring your vision to life with Code With Haris. Collaborate with our experts and create your next successful project today!</p>
+          <p className="ctaSubtitle">Bring your vision to life with Code With Haris. Work directly with me — one developer, end-to-end — and ship your next project with confidence.</p>
           <Link href="/contact" className="btn btn-white">
-            Let&apos;s Contact
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Get in Touch
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </Link>
         </div>
       </section>
