@@ -1,10 +1,19 @@
 import { Resend } from 'resend';
 import { getBudgetLabel } from '@/lib/budgetOptions';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+}
 
 export async function POST(request) {
   try {
+    const resend = getResendClient();
+    if (!resend) {
+      return Response.json({ error: 'Email service is not configured' }, { status: 503 });
+    }
+
     const body = await request.json();
     const { firstName, lastName, email, phone, service, budget, message } = body;
 
