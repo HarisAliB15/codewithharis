@@ -5,6 +5,7 @@
   padding: 6rem 0 5rem;
   text-align: center;
   background: linear-gradient(180deg, var(--bg) 0%, var(--surface-raised) 100%);
+  perspective: 1000px;
 }
 
 .heroGlow1 {
@@ -69,7 +70,6 @@
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;
@@ -146,85 +146,408 @@
 /* ===================== SERVICES ===================== */
 .services {
   padding: 5rem 0 6rem;
-  background: linear-gradient(180deg, var(--surface-muted) 0%, var(--mist) 100%);
-  border-top: 1px solid var(--border);
+  background: var(--bg);
 }
 
-.servicesGrid {
+.servicesContainer {
+  max-width: 1120px;
+}
+
+.servicesHeader {
+  text-align: left;
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.servicesEyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.servicesTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin-bottom: 0.75rem;
+}
+
+.servicesSubtitle {
+  font-size: 1rem;
+  color: var(--fg-muted);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.servicesBento {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  perspective: 1200px;
+}
+
+@media (min-width: 900px) {
+  .servicesBento {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+  }
+
+  .featuredServiceCard {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+}
+
+.featuredServiceCard,
+.serviceCard,
+.pricingCard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s var(--ease-premium),
+    box-shadow 0.4s var(--ease-premium),
+    border-color 0.4s var(--ease-premium);
+}
+
+.featuredServiceCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .serviceCard {
-  position: relative;
-  border-radius: 0.75rem;
-  padding: 2rem;
-  overflow: hidden;
-  background-color: var(--neu-bg);
-  cursor: pointer;
-  transition:
-    background-color 0.35s var(--ease-premium),
-    border-color 0.35s var(--ease-premium),
-    box-shadow 0.35s var(--ease-premium),
-    transform 0.35s var(--ease-premium);
-  box-shadow:
-    6px 6px 14px var(--neu-shadow-dark),
-    -5px -5px 12px var(--neu-shadow-light);
-  border: 1.5px solid var(--neu-bg);
+  padding: 1.75rem;
 }
 
-.serviceCard:hover {
-  background-color: var(--neu-hover-bg);
-  border: 1.5px solid var(--accent);
-  transform: translateY(-3px);
-  box-shadow:
-    8px 8px 20px var(--neu-shadow-dark),
-    -6px -6px 16px var(--neu-shadow-light),
-    var(--shadow-accent);
-}
-
-.serviceCard:hover::before {
-  opacity: 1;
-}
-
-.cardGlow {
+.featuredServiceCard::after,
+.serviceCard::after,
+.pricingCard::after {
+  content: '';
   position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 60px;
-  background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
-  filter: blur(12px);
-  opacity: 0;
+  inset: auto 12% -7px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(15, 23, 42, 0.1) 0%, transparent 72%);
+  filter: blur(5px);
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.4s var(--ease-premium);
 }
 
-.serviceCard:hover .cardGlow {
-  opacity: 1;
+.featuredServiceCard:hover {
+  transform: translateY(-6px) rotateX(3deg) rotateY(-2deg) translateZ(8px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 20px 40px rgba(15, 23, 42, 0.1),
+    0 8px 20px rgba(67, 56, 202, 0.06);
+  border-color: var(--border-strong);
 }
 
-.serviceIcon {
-  font-size: 2.2rem;
-  margin-bottom: 1.1rem;
-  display: block;
+.serviceCard:hover,
+.pricingCard:hover {
+  transform: translateY(-6px) rotateX(3deg) rotateY(2deg) translateZ(8px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 20px 40px rgba(15, 23, 42, 0.1),
+    0 8px 20px rgba(67, 56, 202, 0.06);
+  border-color: var(--border-strong);
+}
+
+.featuredServiceCard:hover::after,
+.serviceCard:hover::after,
+.pricingCard:hover::after {
+  opacity: 0.75;
+}
+
+.featuredServiceCard:hover .featuredIconStage {
+  transform: translateY(-2px) translateZ(28px);
+  --icon-float-speed: 2.8s;
+}
+
+.serviceCard:hover .serviceIconStage,
+.pricingCard:hover .serviceIconStage {
+  transform: translateY(-2px) translateZ(26px);
+  --icon-float-speed: 2.8s;
+}
+
+.featuredIconStage,
+.serviceIconStage {
+  transition: transform 0.4s var(--ease-premium);
+}
+
+.pricingCard .featuredHeader {
+  margin-bottom: 1rem;
+}
+
+.featuredHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  transform: translateZ(12px);
+}
+
+.featuredIconStage {
+  margin-bottom: 0;
+}
+
+.serviceIconStage {
+  margin-bottom: 1rem;
+}
+
+.featuredTag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-muted);
+  border: 1px solid rgba(67, 56, 202, 0.12);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.featuredTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 0.75rem;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.featuredDesc {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.featuredSteps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featuredStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+.stepText {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.stepText strong {
+  color: var(--fg);
+  font-weight: 600;
 }
 
 .serviceTitle {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--fg);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
   letter-spacing: var(--tracking-tight);
 }
 
 .serviceDesc {
-  font-size: 0.87rem;
+  font-size: 0.875rem;
   color: var(--fg-muted);
-  line-height: 1.7;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ===================== PRICING ===================== */
+.pricing {
+  padding: 5rem 0 6rem;
+  background: var(--bg);
+}
+
+.pricingContainer {
+  max-width: 1120px;
+}
+
+.pricingHeader {
+  text-align: left;
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.pricingEyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.pricingTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin-bottom: 0.75rem;
+}
+
+.pricingSubtitle {
+  font-size: 1rem;
+  color: var(--fg-muted);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  perspective: 1200px;
+}
+
+@media (min-width: 900px) {
+  .pricingGrid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+.pricingCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricingTierLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  line-height: 1.45;
+  margin: 0 0 0.35rem;
+}
+
+.pricingPrice {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.1;
+  margin: 0 0 0.65rem;
+  letter-spacing: var(--tracking-tight);
+}
+
+.pricingCard .serviceDesc {
+  margin-bottom: 1.15rem;
+}
+
+.pricingMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
   margin-bottom: 1.25rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricingMetaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.pricingMetaItem svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.pricingIncludesLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 0.85rem;
+}
+
+.pricingFeatures {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pricingFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.pricingFeatureMuted {
+  color: var(--fg-subtle);
+}
+
+.pricingCheck {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1rem;
+  color: var(--accent);
+}
+
+.pricingCheckMuted {
+  color: var(--border-strong);
+}
+
+.pricingCta {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
 }
 
 .serviceLink {
@@ -250,6 +573,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  perspective: 1000px;
 }
 
 .ctaGlow {
@@ -284,6 +608,10 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
+.ctaBadgeIcon {
+  transform: translateZ(10px);
+}
+
 .ctaTitle {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 4vw, 2.6rem);
@@ -306,6 +634,22 @@
 }
 
 /* ===================== RESPONSIVE ===================== */
+@media (prefers-reduced-motion: reduce) {
+  .featuredServiceCard,
+  .serviceCard,
+  .pricingCard,
+  .featuredIconStage,
+  .serviceIconStage {
+    transition: none;
+  }
+
+  .featuredServiceCard:hover,
+  .serviceCard:hover,
+  .pricingCard:hover {
+    transform: translateY(-4px);
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 4rem 0 3.5rem;
@@ -324,7 +668,11 @@
     display: none;
   }
 
-  .servicesGrid {
+  .servicesBento {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingGrid {
     grid-template-columns: 1fr;
   }
 

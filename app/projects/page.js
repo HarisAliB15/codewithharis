@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PageHero from '@/components/PageHero';
+import PageCta from '@/components/PageCta';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -36,21 +38,17 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <>
-      <section className="pageHero">
-        <div className="container">
-          <p className="section-label">Portfolio</p>
-          <h1 className="pageTitle">Selected work</h1>
-          <p className="pageSubtitle">
-            Products and experiences crafted for clients — from mobile apps to full-stack platforms.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Portfolio"
+        title="Selected work"
+        subtitle="Products and experiences crafted for clients — from mobile apps to full-stack platforms."
+      />
 
       <section className={styles.projectsSection}>
         <div className="container">
           <div className={styles.projectsGrid}>
             {projects.map((p) => (
-              <article key={p.name} className={styles.projectCard}>
+              <article key={p.name} className={`premiumCard ${styles.projectCard}`}>
                 <div className={styles.projectThumb}>
                   {p.image ? (
                     <Image
@@ -67,7 +65,7 @@ export default function ProjectsPage() {
                   )}
                 </div>
                 <div className={styles.projectInfo}>
-                  <span className={styles.projectTag}>{p.tag}</span>
+                  <span className="cardEyebrow">{p.tag}</span>
                   <h3 className={styles.projectName}>{p.name}</h3>
                   <p className={styles.projectDesc}>{p.desc}</p>
                 </div>
@@ -77,23 +75,13 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="ctaSection">
-        <div className="ctaGlow" aria-hidden="true" />
-        <div className="container ctaInner">
-          <p className="ctaBadge">Next step</p>
-          <h2 className="ctaTitle">Have a project in mind?</h2>
-          <p className="ctaSubtitle">
-            Share your idea and I&apos;ll explore how to bring it to life.
-          </p>
-          <Link href="/contact" className="btn btn-white">
-            Start a conversation
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </section>
+      <PageCta
+        badgeIcon="rocket"
+        badge="Let's Work Together"
+        title="Have a project in mind?"
+        subtitle="Share your idea and I'll explore how to bring it to life."
+        buttonText="Start a conversation"
+      />
     </>
   );
 }

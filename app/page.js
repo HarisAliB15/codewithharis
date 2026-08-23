@@ -1,10 +1,25 @@
 import Link from 'next/link';
+import ServiceIcon from '@/components/ServiceIcon';
+import PricingSection from '@/components/PricingSection';
 import styles from './page.module.css';
 
 export const metadata = {
   title: 'I build fast, modern web apps - Code With Haris',
   description: 'Freelance full-stack developer in Pakistan specializing in Next.js, React, React Native mobile apps, and Node.js.',
 };
+
+const services = [
+  { icon: 'website', title: 'Website Development', desc: 'I build SEO-friendly, responsive websites tailored to your business goals — from high-converting landing pages to full-scale platforms, with fast performance, clean code, and seamless compatibility across devices.' },
+  { icon: 'mobile', title: 'Mobile App Development', desc: 'Grow your business with custom mobile apps using React Native for iOS and Android. I create fast, user-focused applications with modern features, smooth performance, and scalable architecture.' },
+  { icon: 'design', title: 'UI/UX Design', desc: 'I craft intuitive interfaces and visually engaging layouts that improve usability, increase conversions, and deliver a polished experience your users will love.' },
+  { icon: 'webapp', title: 'Web Application Development', desc: 'I build scalable, high-performance web applications with modern frameworks and secure technologies — automating workflows, improving efficiency, and supporting real business growth.' },
+];
+
+const asoSteps = [
+  { label: 'Keyword research', text: 'Target the terms your ideal users actually search for.' },
+  { label: 'Listing optimization', text: 'Craft titles, copy, and visuals that convert browsers into downloads.' },
+  { label: 'Submission & compliance', text: 'Navigate App Store and Play Store review until you\'re live.' },
+];
 
 export default function HomePage() {
   return (
@@ -40,34 +55,60 @@ export default function HomePage() {
 
       {/* ===================== SERVICES ===================== */}
       <section className={styles.services} id="services">
-        <div className="container">
-          <p className="section-label">What I do</p>
-          <div className="section-header">
-            <h2 className="section-title">Services I Offer</h2>
-            <p className="section-subtitle">Custom solutions tailored to your goals — built start to finish by me.</p>
-          </div>
-          <div className={styles.servicesGrid}>
-            {[
-              { icon: '🌐', title: 'Website Development', desc: 'I build SEO-friendly, responsive websites tailored to your business goals — from high-converting landing pages to full-scale platforms, with fast performance, clean code, and seamless compatibility across devices.' },
-              { icon: '📱', title: 'Mobile App Development', desc: 'Grow your business with custom mobile apps using React Native for iOS and Android. I create fast, user-focused applications with modern features, smooth performance, and scalable architecture.' },
-              { icon: '🎨', title: 'UI/UX Design', desc: 'I craft intuitive interfaces and visually engaging layouts that improve usability, increase conversions, and deliver a polished experience your users will love.' },
-              { icon: '⚡', title: 'Web Application Development', desc: 'I build scalable, high-performance web applications with modern frameworks and secure technologies — automating workflows, improving efficiency, and supporting real business growth.' },
-            ].map((service) => (
-              <div key={service.title} className={styles.serviceCard}>
-                <div className={styles.cardGlow} />
-                <span className={styles.serviceIcon}>{service.icon}</span>
+        <div className={`container ${styles.servicesContainer}`}>
+          <header className={styles.servicesHeader}>
+            <p className={styles.servicesEyebrow}>What I do</p>
+            <h2 className={styles.servicesTitle}>Services I Offer</h2>
+            <p className={styles.servicesSubtitle}>
+              Custom solutions tailored to your goals — built start to finish by me.
+            </p>
+          </header>
+
+          <div className={styles.servicesBento}>
+            <article className={styles.featuredServiceCard}>
+              <div className={styles.featuredHeader}>
+                <ServiceIcon name="aso" size="lg" featured stageClassName={styles.featuredIconStage} />
+                <span className={styles.featuredTag}>Featured</span>
+              </div>
+              <h3 className={styles.featuredTitle}>ASO & App Store Submission</h3>
+              <p className={styles.featuredDesc}>
+                End-to-end App Store and Play Store launches — keyword research, listing optimization, screenshots, and submission handling so your app gets found and approved the first time.
+              </p>
+              <ol className={styles.featuredSteps}>
+                {asoSteps.map((step, index) => (
+                  <li key={step.label} className={styles.featuredStep}>
+                    <span className={styles.stepNumber}>{index + 1}</span>
+                    <span className={styles.stepText}>
+                      <strong>{step.label}</strong>
+                      {' — '}
+                      {step.text}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </article>
+
+            {services.map((service) => (
+              <article key={service.title} className={styles.serviceCard}>
+                <ServiceIcon name={service.icon} size="lg" stageClassName={styles.serviceIconStage} />
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDesc}>{service.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
+
+      <PricingSection />
+
       {/* ===================== CTA ===================== */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaGlow} />
         <div className={`container ${styles.ctaInner}`}>
-          <p className={styles.ctaBadge}>🚀 Let&apos;s Work Together</p>
+          <p className={styles.ctaBadge}>
+            <ServiceIcon name="rocket" size="sm" onDark stageClassName={styles.ctaBadgeIcon} />
+            Let&apos;s Work Together
+          </p>
           <h2 className={styles.ctaTitle}>Ready to Elevate Your Digital Presence?</h2>
           <p className={styles.ctaSubtitle}>Bring your vision to life with Code With Haris. Work directly with me — one developer, end-to-end — and ship your next project with confidence.</p>
           <Link href="/contact" className="btn btn-white">

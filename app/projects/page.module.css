@@ -1,28 +1,22 @@
 .projectsSection {
   padding: 4.5rem 0 6rem;
+  background: var(--bg);
 }
 
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.75rem;
+  gap: 1.25rem;
+  perspective: 1200px;
 }
 
 .projectCard {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 2px;
   overflow: hidden;
-  transition:
-    transform 0.35s var(--ease-premium),
-    box-shadow 0.35s var(--ease-premium),
-    border-color var(--transition);
+  padding: 0;
 }
 
-.projectCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-premium);
-  border-color: var(--border-strong);
+.projectCard::after {
+  inset: auto 8% -7px;
 }
 
 .projectThumb img {
@@ -47,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--mist) 0%, var(--bg) 100%);
+  background: linear-gradient(135deg, var(--surface-raised) 0%, var(--accent-muted) 100%);
 }
 
 .projectPlaceholder span {
@@ -58,29 +52,19 @@
 }
 
 .projectInfo {
-  padding: 1.5rem;
-}
-
-.projectTag {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 0.65rem;
+  padding: 1.5rem 1.75rem 1.75rem;
 }
 
 .projectName {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--fg);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-tight);
   margin-bottom: 0.5rem;
 }
 
 .projectDesc {
-  font-size: 0.92rem;
+  font-size: 0.875rem;
   color: var(--fg-muted);
   line-height: 1.65;
 }

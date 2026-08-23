@@ -1,31 +1,25 @@
 .blogSection {
   padding: 4.5rem 0 6rem;
+  background: var(--bg);
 }
 
 .blogGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 1.25rem;
+  perspective: 1200px;
 }
 
 .blogCard {
   display: flex;
   flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 2px;
   overflow: hidden;
   text-decoration: none;
-  transition:
-    transform 0.35s var(--ease-premium),
-    box-shadow 0.35s var(--ease-premium),
-    border-color var(--transition);
+  padding: 0;
 }
 
-.blogCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-premium);
-  border-color: var(--border-strong);
+.blogCard::after {
+  inset: auto 8% -7px;
 }
 
 .cardImage img {
@@ -44,26 +38,23 @@
   overflow: hidden;
 }
 
+.cardPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--surface-raised) 0%, var(--accent-muted) 100%);
+}
+
 .cardContent {
-  padding: 1.5rem;
+  padding: 1.5rem 1.75rem 1.75rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.cardTag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.65rem;
-}
-
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   line-height: var(--leading-tight);
   color: var(--fg);
   letter-spacing: var(--tracking-tight);
@@ -71,7 +62,7 @@
 }
 
 .cardDesc {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   color: var(--fg-muted);
   line-height: 1.65;
   margin-bottom: 1.25rem;
@@ -95,5 +86,5 @@
 }
 
 .blogCard:hover .readMore {
-  color: var(--accent-hover);
+  color: var(--accent);
 }

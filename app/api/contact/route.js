@@ -1,4 +1,5 @@
 import { Resend } from 'resend';
+import { getBudgetLabel } from '@/lib/budgetOptions';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -6,6 +7,8 @@ export async function POST(request) {
   try {
     const body = await request.json();
     const { firstName, lastName, email, phone, service, budget, message } = body;
+
+    const budgetLabel = getBudgetLabel(budget);
 
     if (!email) {
       return Response.json({ error: 'Email is required' }, { status: 400 });
@@ -25,7 +28,7 @@ export async function POST(request) {
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
           <p><strong>Service:</strong> ${service}</p>
-          <p><strong>Budget:</strong> ${budget}</p>
+          <p><strong>Budget:</strong> ${budgetLabel}</p>
           <p><strong>Message:</strong></p>
           <p>${message}</p>
         `
@@ -67,7 +70,7 @@ export async function POST(request) {
                         </td></tr>
                         <tr><td style="padding:20px 24px;border-bottom:1px solid #2e2e2e;">
                           <p style="margin:0;color:#6b6b6b;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Budget</p>
-                          <p style="margin:4px 0 0;color:#ffffff;font-size:15px;font-weight:600;">${budget}</p>
+                          <p style="margin:4px 0 0;color:#ffffff;font-size:15px;font-weight:600;">${budgetLabel}</p>
                         </td></tr>
                         <tr><td style="padding:20px 24px;">
                           <p style="margin:0;color:#6b6b6b;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Your message</p>

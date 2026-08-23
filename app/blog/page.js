@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PageHero from '@/components/PageHero';
+import PageCta from '@/components/PageCta';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -22,21 +24,17 @@ const posts = [
 export default function BlogPage() {
   return (
     <>
-      <section className="pageHero">
-        <div className="container">
-          <p className="section-label">Writing</p>
-          <h1 className="pageTitle">Blog</h1>
-          <p className="pageSubtitle">
-            Thoughts on development, technology, and building products that last.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Writing"
+        title="Blog"
+        subtitle="Thoughts on development, technology, and building products that last."
+      />
 
       <section className={styles.blogSection}>
         <div className="container">
           <div className={styles.blogGrid}>
             {posts.map((post) => (
-              <Link key={post.id} href={`/blog/${post.id}`} className={styles.blogCard}>
+              <Link key={post.id} href={`/blog/${post.id}`} className={`premiumCard ${styles.blogCard}`}>
                 <div className={styles.cardImage}>
                   <Image
                     src={post.image}
@@ -47,7 +45,7 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className={styles.cardContent}>
-                  <span className={styles.cardTag}>{post.tag}</span>
+                  <span className="cardEyebrow">{post.tag}</span>
                   <h2 className={styles.cardTitle}>{post.title}</h2>
                   <p className={styles.cardDesc}>{post.desc}</p>
                   <div className={styles.cardFooter}>
@@ -61,23 +59,13 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="ctaSection">
-        <div className="ctaGlow" aria-hidden="true" />
-        <div className="container ctaInner">
-          <p className="ctaBadge">Next step</p>
-          <h2 className="ctaTitle">Ready to elevate your digital presence?</h2>
-          <p className="ctaSubtitle">
-            Share your idea and I&apos;ll shape a clear path from concept to launch.
-          </p>
-          <Link href="/contact" className="btn btn-white">
-            Let&apos;s talk
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </section>
+      <PageCta
+        badgeIcon="rocket"
+        badge="Let's Work Together"
+        title="Ready to elevate your digital presence?"
+        subtitle="Share your idea and I'll shape a clear path from concept to launch."
+        buttonText="Let's talk"
+      />
     </>
   );
 }

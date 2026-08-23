@@ -1,3 +1,5 @@
+import PageHero from '@/components/PageHero';
+import PageCta from '@/components/PageCta';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -8,13 +10,31 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className={styles.aboutSection} style={{ textAlign: 'center', padding: '12rem 1rem' }}>
+      <PageHero
+        eyebrow="About me"
+        title="The story behind the code"
+        subtitle="Who I am, how I work, and what you can expect when we build together."
+      />
+
+      <section className="emptyState">
         <div className="container">
-          <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🚧</div>
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.03em' }}>Coming Soon</h2>
-          <p style={{ color: '#6b7280', fontSize: '1.1rem', maxWidth: '500px', margin: '0 auto', lineHeight: '1.6' }}>I&apos;m putting together my story, what I stand for, and how I work as a solo developer. Check back soon!</p>
+          <div className={`premiumCard emptyStateCard`}>
+            <span className="emptyStateEmoji" aria-hidden="true">🚧</span>
+            <h2 className="emptyStateTitle">Coming soon</h2>
+            <p className="emptyStateDesc">
+              I&apos;m putting together my story, what I stand for, and how I work as a solo developer. Check back soon!
+            </p>
+          </div>
         </div>
       </section>
+
+      <PageCta
+        badgeIcon="rocket"
+        badge="Let's Work Together"
+        title="Ready to build something great?"
+        subtitle="Work directly with me — one developer, end-to-end — and ship your next project with confidence."
+        buttonText="Get in Touch"
+      />
     </>
   );
 }

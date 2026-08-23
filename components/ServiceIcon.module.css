@@ -1,0 +1,380 @@
+.iconStage {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffffff 0%, var(--surface-raised) 55%, #eef2f7 100%);
+  transform: translateZ(18px);
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 8px 16px rgba(15, 23, 42, 0.08),
+    3px 5px 10px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.4s var(--ease-premium),
+    box-shadow 0.4s var(--ease-premium);
+  flex-shrink: 0;
+}
+
+.iconStage::after {
+  content: '';
+  position: absolute;
+  inset: auto 16% -5px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(15, 23, 42, 0.14) 0%, transparent 72%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.iconStageFeatured {
+  margin-bottom: 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 6px 14px rgba(15, 23, 42, 0.22);
+}
+
+.iconStageFeatured .iconInner {
+  filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.35));
+}
+
+.iconInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  animation: iconFloat var(--icon-float-speed, 4.5s) var(--ease-premium) infinite;
+}
+
+.iconInner svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.orbit {
+  transform-origin: 24px 24px;
+  animation: iconSpin 12s linear infinite;
+}
+
+.spark {
+  transform-origin: 24px 24px;
+  animation: iconSpin 16s linear infinite reverse;
+}
+
+.device {
+  transform-origin: 24px 24px;
+  animation: iconTilt 4.2s var(--ease-premium) infinite;
+}
+
+.pulse {
+  animation: iconPulse 2.2s var(--ease-premium) infinite;
+}
+
+.screenGlow {
+  animation: iconGlow 2.8s var(--ease-premium) infinite;
+}
+
+.palette {
+  transform-origin: 24px 26px;
+  animation: iconTilt 4.8s var(--ease-premium) infinite;
+}
+
+.dotA,
+.dotB,
+.dotC {
+  animation: iconDot 2.6s var(--ease-premium) infinite;
+}
+
+.dotB {
+  animation-delay: 0.3s;
+}
+
+.dotC {
+  animation-delay: 0.6s;
+}
+
+.brush {
+  transform-origin: 33px 37px;
+  animation: iconBrush 3s var(--ease-premium) infinite;
+}
+
+.bolt {
+  transform-origin: 24px 24px;
+  animation: iconBolt 2.4s var(--ease-premium) infinite;
+}
+
+.boltGlow {
+  transform-origin: 24px 24px;
+  animation: iconBoltGlow 2.4s var(--ease-premium) infinite;
+}
+
+.store {
+  transform-origin: 24px 25px;
+  animation: iconTilt 4.5s var(--ease-premium) infinite;
+}
+
+.storeDot {
+  animation: iconPulse 2s var(--ease-premium) infinite;
+}
+
+.download {
+  transform-origin: 24px 27px;
+  animation: iconBounce 2.6s var(--ease-premium) infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) translateZ(4px);
+  }
+
+  50% {
+    transform: translateY(-3px) translateZ(8px);
+  }
+}
+
+@keyframes iconSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconTilt {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes iconGlow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes iconDot {
+  0%, 100% {
+    transform: scale(0.88);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes iconBrush {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes iconBolt {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.07);
+  }
+
+  70% {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes iconBoltGlow {
+  0%, 100% {
+    opacity: 0.14;
+  }
+
+  40% {
+    opacity: 0.32;
+  }
+
+  70% {
+    opacity: 0.18;
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+.rocketBody {
+  transform-origin: 24px 22px;
+  animation: iconTilt 4s var(--ease-premium) infinite;
+}
+
+.rocketFlame {
+  transform-origin: 24px 38px;
+  animation: iconFlame 1.8s var(--ease-premium) infinite;
+}
+
+.reactRing {
+  transform-origin: 24px 24px;
+  animation: iconSpin 10s linear infinite;
+}
+
+.reactCore {
+  animation: iconPulse 2.4s var(--ease-premium) infinite;
+}
+
+.nextArrow {
+  transform-origin: 24px 24px;
+  animation: iconTilt 3.6s var(--ease-premium) infinite;
+}
+
+.flagStar {
+  animation: iconTilt 4.2s var(--ease-premium) infinite;
+}
+
+.sparkleA {
+  transform-origin: 24px 15px;
+  animation: iconSparkle 2.8s var(--ease-premium) infinite;
+}
+
+.sparkleB {
+  transform-origin: 30px 30px;
+  animation: iconSparkle 2.8s var(--ease-premium) infinite;
+  animation-delay: 0.5s;
+}
+
+.iconStageSm {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 0.45rem;
+  margin-bottom: 0;
+}
+
+.iconStageSm .iconInner {
+  width: 1rem;
+  height: 1rem;
+}
+
+.iconStageMd {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.65rem;
+  margin-bottom: 0;
+}
+
+.iconStageMd .iconInner {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.iconStageLg {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.iconStageLg .iconInner {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.iconStageInline {
+  display: inline-flex;
+  vertical-align: -0.2em;
+  margin: 0 0.12em;
+}
+
+.iconStageOnDark {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.iconStageOnDark::after {
+  opacity: 0.35;
+}
+
+@keyframes iconFlame {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scaleY(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1.08);
+  }
+}
+
+@keyframes iconSparkle {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(0.88) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08) rotate(8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconInner,
+  .orbit,
+  .spark,
+  .device,
+  .pulse,
+  .screenGlow,
+  .palette,
+  .dotA,
+  .dotB,
+  .dotC,
+  .brush,
+  .bolt,
+  .boltGlow,
+  .store,
+  .storeDot,
+  .download,
+  .rocketBody,
+  .rocketFlame,
+  .reactRing,
+  .reactCore,
+  .nextArrow,
+  .flagStar,
+  .sparkleA,
+  .sparkleB {
+    animation: none;
+  }
+}

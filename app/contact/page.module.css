@@ -1,37 +1,84 @@
-.pageHero {
-  padding: 4.5rem 0 3.5rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--surface-muted) 0%, var(--bg) 100%);
+.contactSection {
+  padding: 4.5rem 0 6rem;
+  background: var(--bg);
 }
-.pageTitle { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; letter-spacing: var(--tracking-tight); margin-bottom: 0.75rem; }
-.pageSubtitle { font-size: 1rem; color: var(--fg-muted); max-width: 520px; margin: 0 auto; }
-
-.contactSection { padding: 5rem 0 6rem; }
 
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: start;
 }
-.contactInfo h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; letter-spacing: var(--tracking-tight); margin-bottom: 0.75rem; }
-.contactInfo p { font-size: 0.92rem; color: var(--fg-muted); line-height: 1.7; margin-bottom: 1.5rem; }
-.contactItem { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-.contactIcon { width: 38px; height: 38px; border-radius: 0.5rem; background: var(--surface-muted); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-.contactItemText { font-size: 0.88rem; color: var(--fg-muted); }
-.socialButtons { margin-top: 1.75rem; }
-.socialLabel { font-size: 0.85rem; color: var(--fg-muted); font-weight: 600; margin-bottom: 0.75rem; }
-.socialGrid { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
-/* Form */
-.contactFormCard {
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-premium);
+.contactInfo h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 0.75rem;
 }
+
+.contactInfo p {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contactItem:last-of-type {
+  border-bottom: none;
+}
+
+.contactLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contactItemText {
+  font-size: 0.9rem;
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.socialButtons {
+  margin-top: 1.5rem;
+}
+
+.socialLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 0.75rem;
+}
+
+.socialGrid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contactFormCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
 .successBanner {
   background: var(--success-bg);
   border: 1px solid var(--success-border);
@@ -42,9 +89,25 @@
   font-weight: 600;
   margin-bottom: 1.25rem;
 }
-.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.formGroup { margin-bottom: 1.25rem; }
-.formLabel { display: block; font-size: 0.85rem; font-weight: 600; color: var(--fg); margin-bottom: 0.4rem; }
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 0.4rem;
+}
+
 .formInput,
 .formSelect,
 .formTextarea {
@@ -59,14 +122,32 @@
   outline: none;
   font-family: inherit;
 }
-.formInput:focus, .formSelect:focus, .formTextarea:focus {
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-muted);
 }
-.formInput::placeholder, .formTextarea::placeholder { color: var(--fg-subtle); }
-.formTextarea { resize: vertical; min-height: 130px; }
-.formSelect { cursor: pointer; }
-.submitBtn { width: 100%; justify-content: center; }
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: var(--fg-subtle);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.formSelect {
+  cursor: pointer;
+}
+
+.submitBtn {
+  width: 100%;
+  justify-content: center;
+}
 
 .phoneInputWrapper {
   display: flex;
@@ -76,10 +157,12 @@
   background: var(--surface);
   transition: all 0.25s ease;
 }
+
 .phoneInputWrapper:focus-within {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-muted);
 }
+
 .customSelectContainer {
   position: relative;
   flex-shrink: 0;
@@ -87,6 +170,7 @@
   background: var(--surface-raised);
   border-radius: 0.5rem 0 0 0.5rem;
 }
+
 .customSelectTrigger {
   display: flex;
   align-items: center;
@@ -101,6 +185,7 @@
   outline: none;
   width: 100%;
 }
+
 .customSelectDropdown {
   position: absolute;
   top: 100%;
@@ -116,6 +201,7 @@
   z-index: 50;
   flex-direction: column;
 }
+
 .customSelectOption {
   display: flex;
   align-items: center;
@@ -127,12 +213,15 @@
   border-bottom: 1px solid var(--surface-muted);
   white-space: nowrap;
 }
+
 .customSelectOption:last-child {
   border-bottom: none;
 }
+
 .customSelectOption:hover {
   background: var(--surface-raised);
 }
+
 .phoneInputBody {
   flex-grow: 1;
   width: 100%;
@@ -143,15 +232,19 @@
   outline: none;
   color: var(--fg);
 }
+
 .phoneInputBody::placeholder {
   color: var(--fg-subtle);
 }
-.phoneError { color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: block; font-weight: 500; }
-@media (max-width: 768px) {
-  .contactGrid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .formRow { grid-template-columns: 1fr; }
-  .contactFormCard { padding: 1.5rem; }
+
+.phoneError {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  display: block;
+  font-weight: 500;
 }
+
 .waFloatingBtn {
   position: fixed;
   bottom: 2rem;
@@ -189,12 +282,26 @@
 }
 
 @media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contactFormCard {
+    padding: 1.5rem;
+  }
+
   .waFloatingBtn {
     bottom: 1.5rem;
     right: 1.5rem;
     width: 50px;
     height: 50px;
   }
+
   .waFloatingBtn svg {
     width: 24px;
     height: 24px;
