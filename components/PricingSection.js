@@ -27,16 +27,24 @@ export default function PricingSection() {
 
   return (
     <section className={pageStyles.pricing} id="pricing">
+      <div className={pageStyles.pricingGridBg} aria-hidden="true" />
+      <div className={pageStyles.pricingGlow} aria-hidden="true" />
       <div className={`container ${pageStyles.pricingContainer}`}>
         <header className={pageStyles.pricingHeader}>
-          <p className={pageStyles.pricingEyebrow}>Pricing</p>
-          <h2 className={pageStyles.pricingTitle}>Start small, scale big</h2>
+          <div className={pageStyles.pricingHeaderMain}>
+            <p className={pageStyles.pricingEyebrow}>
+              <span className={pageStyles.pricingEyebrowDot} />
+              Pricing
+            </p>
+            <h2 className={pageStyles.pricingTitle}>Start small, scale big</h2>
+          </div>
           <p className={pageStyles.pricingSubtitle}>
             Transparent starting points — every project is scoped to your goals and quoted before we begin.
           </p>
         </header>
 
-        <div className={tabStyles.pricingTabs} role="tablist" aria-label="Pricing categories">
+        <div className={pageStyles.pricingToolbar}>
+          <div className={tabStyles.pricingTabs} role="tablist" aria-label="Pricing categories">
           {pricingCategoryIds.map((categoryId) => (
             <button
               key={categoryId}
@@ -49,24 +57,35 @@ export default function PricingSection() {
               {pricingCategories[categoryId].label}
             </button>
           ))}
+          </div>
         </div>
 
         <div className={pageStyles.pricingGrid} role="tabpanel">
-          {category.plans.map((plan) => {
+          {category.plans.map((plan, index) => {
             const includedSet = new Set(plan.included);
 
             return (
-              <article key={plan.slug} className={`${pageStyles.serviceCard} ${pageStyles.pricingCard}`}>
-                {plan.featured ? (
-                  <div className={pageStyles.featuredHeader}>
-                    <ServiceIcon name={plan.icon} size="lg" stageClassName={pageStyles.serviceIconStage} />
-                    <span className={pageStyles.featuredTag}>Most chosen</span>
+              <article
+                key={plan.slug}
+                className={`${pageStyles.pricingCard} ${plan.featured ? pageStyles.pricingCardFeatured : ''}`}
+              >
+                <div className={pageStyles.pricingCardTop}>
+                  <ServiceIcon
+                    name={plan.icon}
+                    size="lg"
+                    featured={plan.featured}
+                    stageClassName={pageStyles.serviceIconStage}
+                  />
+                  <div className={pageStyles.pricingCardHeading}>
+                    {plan.featured ? (
+                      <span className={pageStyles.featuredTag}>Most chosen</span>
+                    ) : (
+                      <span className={pageStyles.pricingIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    )}
+                    <p className={pageStyles.pricingTierLabel}>{plan.tierLabel}</p>
+                    <h3 className={pageStyles.serviceTitle}>{plan.name}</h3>
                   </div>
-                ) : (
-                  <ServiceIcon name={plan.icon} size="lg" stageClassName={pageStyles.serviceIconStage} />
-                )}
-                <p className={pageStyles.pricingTierLabel}>{plan.tierLabel}</p>
-                <h3 className={pageStyles.serviceTitle}>{plan.name}</h3>
+                </div>
                 <p className={pageStyles.pricingPrice}>{plan.price}</p>
                 <p className={pageStyles.serviceDesc}>{plan.desc}</p>
                 <div className={pageStyles.pricingMeta}>

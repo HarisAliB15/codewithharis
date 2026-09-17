@@ -14,7 +14,7 @@ export default function Footer() {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email }),
       });
 
       if (response.ok) {
@@ -31,12 +31,25 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
+      <div className={styles.footerGridBg} aria-hidden="true" />
+      <div className={styles.footerGlow} aria-hidden="true" />
+      <div className={styles.accentBar} aria-hidden="true" />
+
       <div className={styles.footerInner}>
-        {/* Brand */}
         <div className={styles.footerBrandCol}>
+          <span className={styles.brandEyebrow}>
+            <span className={styles.brandEyebrowDot} aria-hidden="true" />
+            Portfolio
+          </span>
           <Link href="/" className={styles.brand}>
             <div className={styles.brandAvatar}>
-              <Image src="/profile.png" alt="Profile" width={40} height={40} style={{ borderRadius: 'inherit', objectFit: 'cover', width: '100%', height: '100%' }} />
+              <Image
+                src="/profile.png"
+                alt="Profile"
+                width={44}
+                height={44}
+                style={{ borderRadius: 'inherit', objectFit: 'cover', width: '100%', height: '100%' }}
+              />
             </div>
             <div className={styles.brandText}>
               <span className={styles.brandName}>Code With Haris</span>
@@ -48,7 +61,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Services */}
         <div className={styles.footerCol}>
           <h4 className={styles.footerHeading}>Services</h4>
           <ul className={styles.footerLinks}>
@@ -59,7 +71,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Company */}
         <div className={styles.footerCol}>
           <h4 className={styles.footerHeading}>Company</h4>
           <ul className={styles.footerLinks}>
@@ -70,7 +81,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Connect */}
         <div className={styles.footerCol}>
           <h4 className={styles.footerHeading}>Connect</h4>
           <ul className={styles.footerLinks}>
@@ -81,32 +91,36 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Newsletter */}
         <div className={styles.footerNewsletterCol}>
-          <h4 className={styles.footerHeading}>Newsletter</h4>
-          <p className={styles.newsletterDesc}>Subscribe for dev tips, project updates, and articles from my blog.</p>
-          <form className={styles.newsletterForm} onSubmit={handleSubscribe}>
-            <input
-              type="email"
-              className={styles.newsletterInput}
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              className={`btn btn-primary btn-sm ${subscribed ? styles.subscribed : ''}`}
-            >
-              {subscribed ? 'Subscribed! ✓' : 'Subscribe'}
-            </button>
-          </form>
+          <div className={styles.newsletterPanel}>
+            <h4 className={styles.footerHeading}>Newsletter</h4>
+            <p className={styles.newsletterDesc}>
+              Dev tips, project updates, and new articles — straight to your inbox.
+            </p>
+            <form className={styles.newsletterForm} onSubmit={handleSubscribe}>
+              <input
+                type="email"
+                className={styles.newsletterInput}
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button
+                type="submit"
+                className={`btn btn-primary btn-sm ${subscribed ? styles.subscribed : ''}`}
+              >
+                {subscribed ? 'Subscribed ✓' : 'Subscribe'}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
       <div className={styles.footerBottom}>
         <div className={styles.footerBottomInner}>
-          <p>© 2026 - Code With Haris</p>
+          <p>© 2026 Code With Haris</p>
+          <span className={styles.footerBottomNote}>Built with Next.js · React · React Native</span>
         </div>
       </div>
     </footer>

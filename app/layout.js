@@ -49,11 +49,15 @@ export const metadata = {
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ThemeScript from '@/components/ThemeScript';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className={poppins.variable}>
-      <body className={poppins.className}>
+      <head>
+        <ThemeScript />
+      </head>
+      <body className={poppins.className} suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />

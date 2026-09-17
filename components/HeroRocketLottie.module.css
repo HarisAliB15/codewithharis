@@ -1,0 +1,24 @@
+.rocketWrap {
+  display: inline;
+  line-height: 0;
+}
+
+.rocket {
+  display: inline-block !important;
+  width: 1.35em !important;
+  height: 1.35em !important;
+  vertical-align: -0.18em;
+  line-height: 0;
+}
+
+.rocket svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rocket {
+    animation: none;
+  }
+}

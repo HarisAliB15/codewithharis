@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import ServiceIcon from '@/components/ServiceIcon';
+import HeroRocketLottie from '@/components/HeroRocketLottie';
 import PricingSection from '@/components/PricingSection';
+import TechMarquee from '@/components/TechMarquee';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -30,11 +32,23 @@ export default function HomePage() {
         <div className={styles.heroGlow2} />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroBadge}>
-            <span className={styles.badgeDot} />
-            Available for new projects
+            <span className={styles.heroBadgeGlow} aria-hidden="true" />
+            <span className={styles.heroBadgeStatus}>
+              <span className={styles.badgeDotWrap} aria-hidden="true">
+                <span className={styles.badgeDot} />
+                <span className={styles.badgeDotRing} />
+              </span>
+              <span className={styles.heroBadgeLabel}>Available</span>
+            </span>
+            <span className={styles.heroBadgeDivider} aria-hidden="true" />
+            <span className={styles.heroBadgeText}>Open for new projects</span>
           </div>
           <h1 className={styles.heroTitle}>
-            I Build Fast, Modern Web Apps 🚀
+            <span className={styles.heroTitleLine}>I Build Fast, Modern</span>
+            <span className={styles.heroTitleEnd}>
+              Web Apps{'\u00A0'}
+              <HeroRocketLottie />
+            </span>
           </h1>
           <p className={styles.heroSubtitle}>
             Freelance full-stack web and mobile app developer from Pakistan. 🇵🇰 <br />
@@ -55,10 +69,17 @@ export default function HomePage() {
 
       {/* ===================== SERVICES ===================== */}
       <section className={styles.services} id="services">
+        <div className={styles.servicesGridBg} aria-hidden="true" />
+        <div className={styles.servicesGlow} aria-hidden="true" />
         <div className={`container ${styles.servicesContainer}`}>
           <header className={styles.servicesHeader}>
-            <p className={styles.servicesEyebrow}>What I do</p>
-            <h2 className={styles.servicesTitle}>Services I Offer</h2>
+            <div className={styles.servicesHeaderMain}>
+              <p className={styles.servicesEyebrow}>
+                <span className={styles.servicesEyebrowDot} />
+                What I do
+              </p>
+              <h2 className={styles.servicesTitle}>Services I Offer</h2>
+            </div>
             <p className={styles.servicesSubtitle}>
               Custom solutions tailored to your goals — built start to finish by me.
             </p>
@@ -88,10 +109,15 @@ export default function HomePage() {
               </ol>
             </article>
 
-            {services.map((service) => (
+            {services.map((service, index) => (
               <article key={service.title} className={styles.serviceCard}>
-                <ServiceIcon name={service.icon} size="lg" stageClassName={styles.serviceIconStage} />
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <div className={styles.serviceCardTop}>
+                  <ServiceIcon name={service.icon} size="lg" stageClassName={styles.serviceIconStage} />
+                  <div className={styles.serviceCardHeading}>
+                    <span className={styles.serviceIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                  </div>
+                </div>
                 <p className={styles.serviceDesc}>{service.desc}</p>
               </article>
             ))}
@@ -103,18 +129,31 @@ export default function HomePage() {
 
       {/* ===================== CTA ===================== */}
       <section className={styles.ctaSection}>
-        <div className={styles.ctaGlow} />
-        <div className={`container ${styles.ctaInner}`}>
-          <p className={styles.ctaBadge}>
-            <ServiceIcon name="rocket" size="sm" onDark stageClassName={styles.ctaBadgeIcon} />
-            Let&apos;s Work Together
-          </p>
-          <h2 className={styles.ctaTitle}>Ready to Elevate Your Digital Presence?</h2>
-          <p className={styles.ctaSubtitle}>Bring your vision to life with Code With Haris. Work directly with me — one developer, end-to-end — and ship your next project with confidence.</p>
-          <Link href="/contact" className="btn btn-white">
-            Get in Touch
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </Link>
+        <div className={styles.ctaGridBg} aria-hidden="true" />
+        <div className={styles.ctaGlow1} aria-hidden="true" />
+        <div className={styles.ctaGlow2} aria-hidden="true" />
+        <TechMarquee embedded />
+        <div className={`container ${styles.ctaContainer}`}>
+          <div className={styles.ctaPanel}>
+            <div className={styles.ctaHeader}>
+              <div className={styles.ctaHeaderMain}>
+                <p className={styles.ctaEyebrow}>
+                  <ServiceIcon name="rocket" size="sm" onDark stageClassName={styles.ctaBadgeIcon} />
+                  Let&apos;s Work Together
+                </p>
+                <h2 className={styles.ctaTitle}>Ready to Elevate Your Digital Presence?</h2>
+              </div>
+              <div className={styles.ctaHeaderAside}>
+                <p className={styles.ctaSubtitle}>
+                  Bring your vision to life with Code With Haris. Work directly with me — one developer, end-to-end — and ship your next project with confidence.
+                </p>
+                <Link href="/contact" className={`btn btn-white ${styles.ctaButton}`}>
+                  Get in Touch
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

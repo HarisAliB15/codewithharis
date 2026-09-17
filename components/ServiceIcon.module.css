@@ -3,11 +3,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #ffffff 0%, var(--surface-raised) 55%, #eef2f7 100%);
+  background: var(--icon-stage-bg);
   transform: translateZ(18px);
   transform-style: preserve-3d;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 0 var(--icon-stage-inset) inset,
     0 8px 16px rgba(15, 23, 42, 0.08),
     3px 5px 10px rgba(15, 23, 42, 0.06);
   transition:
@@ -29,14 +29,31 @@
 
 .iconStageFeatured {
   margin-bottom: 0;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.12) inset,
     0 6px 14px rgba(15, 23, 42, 0.22);
 }
 
+.iconStageFeatured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.16) 50%,
+    transparent 62%
+  );
+  background-size: 220% 100%;
+  animation: iconShimmer 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .iconStageFeatured .iconInner {
-  filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.35));
+  filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.45));
 }
 
 .iconInner {
@@ -45,7 +62,7 @@
   justify-content: center;
   width: 1.75rem;
   height: 1.75rem;
-  animation: iconFloat var(--icon-float-speed, 4.5s) var(--ease-premium) infinite;
+  animation: iconBreathe var(--icon-breathe-speed, 5.5s) var(--ease-premium) infinite;
 }
 
 .iconInner svg {
@@ -125,13 +142,29 @@
   animation: iconBounce 2.6s var(--ease-premium) infinite;
 }
 
-@keyframes iconFloat {
+@keyframes iconBreathe {
   0%, 100% {
-    transform: translateY(0) translateZ(4px);
+    transform: scale(1);
   }
 
   50% {
-    transform: translateY(-3px) translateZ(8px);
+    transform: scale(1.045);
+  }
+}
+
+@keyframes iconShimmer {
+  0%, 100% {
+    background-position: 120% 0;
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  42% {
+    background-position: -20% 0;
+    opacity: 0;
   }
 }
 
@@ -243,13 +276,26 @@
   animation: iconFlame 1.8s var(--ease-premium) infinite;
 }
 
-.reactRing {
+.reactAtom {
   transform-origin: 24px 24px;
-  animation: iconSpin 10s linear infinite;
+  transform-box: fill-box;
+  animation: iconSpin var(--icon-spin-speed, 18s) linear infinite;
+}
+
+.reactRing {
+  vector-effect: non-scaling-stroke;
 }
 
 .reactCore {
-  animation: iconPulse 2.4s var(--ease-premium) infinite;
+  animation: iconCoreGlow 3.2s var(--ease-premium) infinite;
+}
+
+.iconStageFeatured[data-icon='react'] .reactRing {
+  stroke: rgba(224, 242, 254, 0.98);
+}
+
+.iconStageFeatured[data-icon='react'] .reactCore {
+  fill: #e0f2fe;
 }
 
 .nextArrow {
@@ -350,7 +396,20 @@
   }
 }
 
+@keyframes iconCoreGlow {
+  0%, 100% {
+    opacity: 0.82;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .iconStageFeatured::before,
   .iconInner,
   .orbit,
   .spark,
@@ -369,7 +428,7 @@
   .download,
   .rocketBody,
   .rocketFlame,
-  .reactRing,
+  .reactAtom,
   .reactCore,
   .nextArrow,
   .flagStar,

@@ -121,9 +121,15 @@ function getIcon(name, uid) {
     ),
     react: (
       <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <ellipse className={styles.reactRing} cx="24" cy="24" rx="14" ry="5.5" stroke={`url(#${id.reactRing})`} strokeWidth="1.75" />
-        <ellipse className={styles.reactRing} cx="24" cy="24" rx="14" ry="5.5" stroke={`url(#${id.reactRing})`} strokeWidth="1.75" transform="rotate(60 24 24)" />
-        <ellipse className={styles.reactRing} cx="24" cy="24" rx="14" ry="5.5" stroke={`url(#${id.reactRing})`} strokeWidth="1.75" transform="rotate(120 24 24)" />
+        <g className={styles.reactAtom}>
+          <ellipse className={styles.reactRing} cx="24" cy="24" rx="14" ry="5.5" stroke={`url(#${id.reactRing})`} strokeWidth="1.75" />
+          <g transform="rotate(60 24 24)">
+            <ellipse className={styles.reactRing} cx="24" cy="24" rx="14" ry="5.5" stroke={`url(#${id.reactRing})`} strokeWidth="1.75" />
+          </g>
+          <g transform="rotate(120 24 24)">
+            <ellipse className={styles.reactRing} cx="24" cy="24" rx="14" ry="5.5" stroke={`url(#${id.reactRing})`} strokeWidth="1.75" />
+          </g>
+        </g>
         <circle className={styles.reactCore} cx="24" cy="24" r="3" fill={`url(#${id.reactCore})`} />
         <defs>
           <linearGradient id={id.reactRing} x1="10" y1="18" x2="38" y2="30" gradientUnits="userSpaceOnUse"><stop stopColor="#22d3ee" /><stop offset="1" stopColor="#0891b2" /></linearGradient>

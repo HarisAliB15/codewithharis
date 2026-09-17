@@ -1,26 +1,30 @@
 .pricingTabs {
   display: inline-flex;
   align-items: stretch;
-  gap: 0;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
-  width: 100%;
-  max-width: 420px;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
 }
 
 .pricingTab {
   flex: 1;
   appearance: none;
   background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  padding: 0.85rem 1rem;
-  font-size: 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--fg-muted);
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .pricingTab:hover {
@@ -28,17 +32,19 @@
 }
 
 .pricingTabActive {
-  color: var(--fg);
-  border-bottom-color: var(--fg);
+  color: var(--accent);
+  background: var(--accent-muted);
+  border-color: rgba(67, 56, 202, 0.12);
 }
 
 @media (max-width: 480px) {
   .pricingTabs {
-    max-width: none;
+    display: flex;
+    width: 100%;
   }
 
   .pricingTab {
     font-size: 0.82rem;
-    padding: 0.75rem 0.65rem;
+    padding: 0.65rem 0.75rem;
   }
 }
